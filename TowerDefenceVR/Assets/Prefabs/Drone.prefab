@@ -501,9 +501,10 @@ GameObject:
   - component: {fileID: 7444981638201159925}
   - component: {fileID: 7444981638201159924}
   - component: {fileID: 4577263796840445823}
+  - component: {fileID: -7862745384078639601}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: enemyBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,6 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ATTACK_TIME: 2
   MAX_HP: 3
+  Deadimpact: {fileID: 100006, guid: 8a4aceaf2957c044480166b429f4c7d0, type: 3}
   ATTACK_DISTANCE: 1
 --- !u!195 &7444981638201159924
 NavMeshAgent:
@@ -617,8 +619,24 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7444981637151653801}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50193566
   m_Center: {x: 0, y: 0.00000008940697, z: 0.010386944}
+--- !u!54 &-7862745384078639601
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444981637151653801}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -11,6 +11,9 @@ public class Drone : MonoBehaviour {
 	[System.NonSerialized]
 	public int hp = 0;
 
+	[Header("DeadImpact")]
+	[SerializeField] GameObject Deadimpact;
+
 	public float ATTACK_DISTANCE = 1;
 	// Use this for initialization
 	void Start () {
@@ -25,7 +28,7 @@ public class Drone : MonoBehaviour {
 
 	void Update()
 	{
-		
+
 		if(agent.remainingDistance <= ATTACK_DISTANCE)
 		{
 			attackTime += Time.deltaTime;
@@ -35,5 +38,18 @@ public class Drone : MonoBehaviour {
 				TowerA.Instance.Damage();
 			}
 		}
+
+		if (hp <= 0) {
+			Destroy(gameObject);
+		}
+	}
+
+	private void OnDestroy() {
+		GameObject temp = Instantiate(Deadimpact, gameObject.transform.position, gameObject.transform.rotation);
+		// Destroy(temp, 1.0f);
+	}
+
+	public void GetDamage(int Dmg) {
+		hp -= Dmg;
 	}
 }

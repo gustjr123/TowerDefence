@@ -59,6 +59,9 @@ public class ShootManager : MonoBehaviour
         // In the End we will going to shoot a bullet
         GameObject bullet = Instantiate(bulletPrefab, hand.position, Quaternion.identity);
         bullet.transform.localRotation = hand.rotation;
+        gameObject.GetComponent<AudioSource>().Stop();
+        gameObject.GetComponent<AudioSource>().Play();
+        
     }
 
     // Method to put in the Event when the gesture are not recognized

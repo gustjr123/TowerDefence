@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //ÃÑ¾Ë ½ºÇÇµå
+    //ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½Çµï¿½
     public float speed = 20f;
 
-    //ÃÑ¾Ë ¿¬»ç·Â
+    //ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     public float fireRate = 1f;
 
     // 
@@ -14,6 +14,9 @@ public class Bullet : MonoBehaviour
     private bool collided = false;
 
     private Rigidbody rb = null;
+
+    [Header("BulletDamage")]
+    [SerializeField] private int Damage;
 
     void Start()
     {
@@ -33,6 +36,14 @@ public class Bullet : MonoBehaviour
         {
             collided = true;
             speed = 0;
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("enemyBug")) {
+            // Damage to Enemy
+            other.gameObject.GetComponent<Drone>().GetDamage(Damage);
             Destroy(gameObject);
         }
     }

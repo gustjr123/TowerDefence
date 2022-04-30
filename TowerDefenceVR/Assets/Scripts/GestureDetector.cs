@@ -87,7 +87,7 @@ public class GestureDetector : MonoBehaviour
         {
             // start to Recognize every gesture we make
             Gesture currentGesture = Recognize();
-            Debug.Log("Testing : " + currentGesture.name);
+            // Debug.Log("Testing : " + currentGesture.name);
             // we will associate the recognize to a boolean to see if the Gesture
             // we are going to make is one of the gesture we already saved
             hasRecognize = !currentGesture.Equals(new Gesture());
