@@ -9,7 +9,7 @@ public class Drone : MonoBehaviour {
 	float attackTime = 0;
 	public int MAX_HP = 3;
 	[System.NonSerialized]
-	public int hp = 0;
+	public int hp = 1;
 
 	[Header("DeadImpact")]
 	[SerializeField] GameObject Deadimpact;

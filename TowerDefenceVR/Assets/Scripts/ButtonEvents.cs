@@ -47,4 +47,9 @@ public class ButtonEvents : MonoBehaviour
             isActivate = !isActivate;
         }
     }
+
+    public void onTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 }
