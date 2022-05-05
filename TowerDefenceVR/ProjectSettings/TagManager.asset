@@ -9,6 +9,7 @@ TagManager:
   - enemyBug
   - Bullet
   - Skill
+  - Hand
   layers:
   - Default
   - TransparentFX
