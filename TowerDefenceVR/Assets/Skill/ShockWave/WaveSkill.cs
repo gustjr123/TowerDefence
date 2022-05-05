@@ -25,7 +25,6 @@ public class WaveSkill : MonoBehaviour
         {
             // Damage to Enemy
             other.gameObject.GetComponent<Drone>().GetDamage(Damage);
-            Destroy(gameObject);
         }
     }
 }
