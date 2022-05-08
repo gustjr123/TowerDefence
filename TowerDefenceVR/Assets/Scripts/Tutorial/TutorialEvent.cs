@@ -25,8 +25,8 @@ public class TutorialEvent : MonoBehaviour
     private List<bool> IsPaze;
     private GameObject target;
     private bool iswait;
+    private bool isStart;
     private float waittime = 2.1f;
-    private Hands hands;
 
     [System.NonSerialized] public Hands RightHandData;
     [System.NonSerialized] public Hands LeftHandData;
@@ -34,21 +34,19 @@ public class TutorialEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hands = new Hands();
-        iswait = false;
-        RightHandData = Hands.Temp;
         MaxPaze = 6;
-        nowPaze = 0;
-        IsPaze = new List<bool>(MaxPaze);
-        for (int i=0; i<MaxPaze; i++) {
-            IsPaze.Add(false);
-        }
-        firstPaze();
+        DataReset();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 튜토리얼 시작
+        if (isStart) {
+            firstPaze();
+            isStart = false;
+        }
+        
         #region 1 ~ last페이즈 코드
         // 기본 형태
         if (nowPaze == 0 && !IsPaze[nowPaze] && !iswait) {
@@ -120,11 +118,24 @@ public class TutorialEvent : MonoBehaviour
  
         // data 0은 tutorial 종료 신호로 지정
         if (RightHandData == Hands.Good && nowPaze == 5) {
+            // 각종 데이터 초기화
+            DataReset();
+
+            // 씬 넘어가기
             SceneManager.LoadScene("mainMenuUI");
         }
-        
     }
 
+    private void DataReset() {
+        isStart = true;
+        iswait = false;
+        RightHandData = Hands.Temp;
+        nowPaze = 0;
+        IsPaze = new List<bool>(MaxPaze);
+        for (int i=0; i<MaxPaze; i++) {
+            IsPaze.Add(false);
+        }
+    }
     private IEnumerator Nextpaze(Action work) {
         iswait = true;
         yield return new WaitForSeconds(waittime);

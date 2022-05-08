@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //�Ѿ� ���ǵ�
+    // Bullet Speed
     public float speed = 20f;
 
-    //�Ѿ� �����
+    // ShootRate
     public float fireRate = 1f;
 
-    // 
+    // Destroyed Time after Shooting. for other words, life time for bullet
     public float timeBeforeDestroyed = 5f;
 
     private bool collided = false;
@@ -17,6 +17,11 @@ public class Bullet : MonoBehaviour
 
     [Header("BulletDamage")]
     [SerializeField] private int Damage;
+    [Header("Explosion skill")]
+    [SerializeField] private GameObject explosion;
+
+    [Header("Skill On/Off")]
+    public bool OnExplosion;
 
     void Start()
     {
@@ -44,6 +49,11 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("enemyBug")) {
             // Damage to Enemy
             other.gameObject.GetComponent<Drone>().GetDamage(Damage);
+            // skill
+            if (OnExplosion) {
+                Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            }
+
             Destroy(gameObject);
         }
     }

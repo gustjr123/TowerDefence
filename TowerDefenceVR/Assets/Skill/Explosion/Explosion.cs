@@ -5,7 +5,6 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private GameObject Explosionparticle;
-    [SerializeField] private GameObject targeting;
     public List<GameObject> enemyList;
 
     [Header("ShockWaveDamage")]
@@ -15,8 +14,6 @@ public class Explosion : MonoBehaviour
     void Start()
     {
         enemyList = new List<GameObject>();
-        Destroy(Explosionparticle, 0.9f);
-        Destroy(targeting, 0.8f);
         Destroy(gameObject, 1.0f);
     }
 
