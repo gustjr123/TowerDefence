@@ -1,14 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Bullet Speed
+    //�Ѿ� ���ǵ�
     public float speed = 20f;
 
-    // ShootRate
+    //�Ѿ� �����
     public float fireRate = 1f;
 
-    // Destroyed Time after Shooting. for other words, life time for bullet
+    // 
     public float timeBeforeDestroyed = 5f;
 
     private bool collided = false;
@@ -17,16 +17,14 @@ public class Bullet : MonoBehaviour
 
     [Header("BulletDamage")]
     [SerializeField] private int Damage;
-    [Header("Explosion skill")]
-    [SerializeField] private GameObject explosion;
 
-    [Header("Skill On/Off")]
-    public bool OnExplosion;
+    // KillCounter killCounterScript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, timeBeforeDestroyed);
+        // killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
     }
 
     void FixedUpdate()
@@ -45,16 +43,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("enemyBug")) {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemyBug"))
+        {
             // Damage to Enemy
             other.gameObject.GetComponent<Drone>().GetDamage(Damage);
-            // skill
-            if (OnExplosion) {
-                Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
-            }
-
             Destroy(gameObject);
+            // killCounterScript.AddKill();
         }
     }
 }

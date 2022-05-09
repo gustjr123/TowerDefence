@@ -14,8 +14,11 @@ public class Drone : MonoBehaviour {
 	[Header("DeadImpact")]
 	[SerializeField] GameObject Deadimpact;
 
+	KillCounter killCounterScript;
+
 	public float ATTACK_DISTANCE = 1;
 	// Use this for initialization
+
 	void Start () {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		towerA = GameObject.Find("Tower").transform;
@@ -23,6 +26,7 @@ public class Drone : MonoBehaviour {
 
 		hp = MAX_HP;
 		attackTime = ATTACK_TIME;
+		killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
 	}
 
 
@@ -46,6 +50,7 @@ public class Drone : MonoBehaviour {
 
 	private void OnDestroy() {
 		GameObject temp = Instantiate(Deadimpact, gameObject.transform.position, gameObject.transform.rotation);
+		killCounterScript.AddKill();
 		// Destroy(temp, 1.0f);
 	}
 
