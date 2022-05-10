@@ -785,7 +785,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400752932}
-  - component: {fileID: 400752933}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -807,19 +806,6 @@ Transform:
   m_Father: {fileID: 980871146}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &400752933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400752931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56428eabb29609e4e995a44047dc543f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabs: {fileID: 9083196371460185233, guid: 0e1489f5c7993e5459e3f0bde501dde8, type: 3}
 --- !u!1001 &434639214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1001,7 +987,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 571398405}
           m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
-          m_MethodName: GetInput
+          m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1040,10 +1026,10 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 400752933}
-          m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-          m_MethodName: Spawn
-          m_Mode: 3
+        - m_Target: {fileID: 980871147}
+          m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+          m_MethodName: ExplosionSkillActivate
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1093,10 +1079,10 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 332787453}
-          m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-          m_MethodName: Spawn
-          m_Mode: 3
+        - m_Target: {fileID: 980871147}
+          m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+          m_MethodName: WaveskillActivate
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1641,6 +1627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980871146}
+  - component: {fileID: 980871147}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -1664,6 +1651,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980871147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980871145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25c9d20906236944b705eae802aa2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveSkill: {fileID: 332787451}
+  wave_text: {fileID: 791061964}
+  wave_cooltime: 5
+  rightHandShoot: {fileID: 41020446}
+  explosion_text: {fileID: 1526715036}
+  explosion_cooltime: 5
+  explosion_RunningTime: 2
 --- !u!1001 &1115840362
 PrefabInstance:
   m_ObjectHideFlags: 0

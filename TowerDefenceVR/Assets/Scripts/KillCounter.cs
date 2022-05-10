@@ -44,27 +44,6 @@ public class KillCounter : MonoBehaviour
                 ImageManager.GetComponent<ImageManager>().ImageSuccess();
                 SceneManager.LoadScene("mainMenuUI");
             }
-
-
-
-            // todo Image Open
-            // ~~~~~
-            // ���ӳ����� ���ǽ� isEnd = !isEnd
-
-            // ����
-            /*
-             * 1. ���� ���ǽ� (���ߴ� ����) ���ӻ� ���� ���߰� image������Ʈ�� ������ġ ����
-             * 2. �յ��� �ν����� image������Ʈ �νĵɶ� ����׵θ� ��ȯ��
-             * 3. ��� image������Ʈ ����׵θ��� ��ȯ�Ǹ� ���ӻ��� ������ �ʱ�ȭ��Ű�� SceneLoad�� Menu������ ��ȯ
-             * */
-
-            /*
-            if (RightHandData == Hands.Calling)
-            {
-                PauseManager.GetComponent<Pause>().NonPause();
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
-            }
-            */
         }
     }
 

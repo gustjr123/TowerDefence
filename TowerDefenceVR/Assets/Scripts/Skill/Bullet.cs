@@ -18,13 +18,15 @@ public class Bullet : MonoBehaviour
     [Header("BulletDamage")]
     [SerializeField] private int Damage;
 
-    // KillCounter killCounterScript;
+    [Header("ExplosionPrefab")]
+    [SerializeField] private GameObject explosion;
+
+    public bool IsOnSkill = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, timeBeforeDestroyed);
-        // killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
     }
 
     void FixedUpdate()
@@ -49,6 +51,9 @@ public class Bullet : MonoBehaviour
         {
             // Damage to Enemy
             other.gameObject.GetComponent<Drone>().GetDamage(Damage);
+            if (IsOnSkill) {
+                Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            }
             Destroy(gameObject);
             // killCounterScript.AddKill();
         }

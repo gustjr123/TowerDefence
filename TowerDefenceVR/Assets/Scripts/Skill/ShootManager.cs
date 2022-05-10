@@ -21,11 +21,17 @@ public class ShootManager : MonoBehaviour
     // Choose the method of firing the bullets from Inspector
     public ShootMode shootMode;
 
+    
+
     // Boolean to use in single ShootMode
     private bool hasShoot = false;
 
     // Float used to calculate the time need to fire the bullet, related to the bullet fireRate
     private float timeToFire = 0f;
+
+    // for Explosion skill, Not Use it for WaveSkill
+    [System.NonSerialized] public bool isSkillOn = false;
+    [System.NonSerialized] public float RunningTime;
 
     // Method to add in the Event of the gesture you want to make shoot
     public void OnShoot()
@@ -54,6 +60,20 @@ public class ShootManager : MonoBehaviour
         }
     }
 
+    // Method to put in the Event when the gesture are not recognized
+    public void StopShoot()
+    {
+        hasShoot = false;
+        Debug.Log("Stop Shooting");
+    }
+
+    public void explosionSkillOn() {
+        if (!isSkillOn) {
+            StartCoroutine(SkillDuring());
+            isSkillOn = true;
+        }
+    }
+
     private void Shoot()
     {
         // In the End we will going to shoot a bullet
@@ -64,10 +84,13 @@ public class ShootManager : MonoBehaviour
         
     }
 
-    // Method to put in the Event when the gesture are not recognized
-    public void StopShoot()
-    {
-        hasShoot = false;
-        Debug.Log("Stop Shooting");
+    IEnumerator SkillDuring() {
+        bulletPrefab.GetComponent<Bullet>().IsOnSkill = true;
+        bulletPrefab.GetComponent<Bullet>().fireRate *= 2.0f;
+        yield return new WaitForSeconds(RunningTime);
+        bulletPrefab.GetComponent<Bullet>().IsOnSkill = false;
+        bulletPrefab.GetComponent<Bullet>().fireRate *= 0.5f;
+        isSkillOn = false;
     }
+
 }

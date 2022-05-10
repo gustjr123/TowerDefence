@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject prefabs;
 
-    public void Spawn(int index)
+    public void Spawn()
     {
         Instantiate(prefabs, transform.position, transform.rotation);
     }
