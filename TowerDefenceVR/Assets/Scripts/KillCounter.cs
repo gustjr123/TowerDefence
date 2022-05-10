@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class KillCounter : MonoBehaviour
 {
@@ -32,7 +34,7 @@ public class KillCounter : MonoBehaviour
         ShowKills();
         if (kills == 10)
         {
-            //description.text = "°íÁö°¡ ´«¾ÕÀÌ¿¹¿ä.\n¾ÏÈ£¸¦ µû¶óÇØ¼­ ÀûÀ» ¹°¸®ÃÄÁÖ¼¼¿ä.";
+            //description.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½.\nï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.";
             ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
             PauseManager.GetComponent<Pause>().PauseGame();
 
@@ -40,19 +42,20 @@ public class KillCounter : MonoBehaviour
             {
                 PauseManager.GetComponent<Pause>().NonPause();
                 ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                SceneManager.LoadScene("mainMenuUI");
             }
 
 
 
             // todo Image Open
             // ~~~~~
-            // °ÔÀÓ³¡³ª´Â Á¶°Ç½Ã isEnd = !isEnd
+            // ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç½ï¿½ isEnd = !isEnd
 
-            // ÇÒÀÏ
+            // ï¿½ï¿½ï¿½ï¿½
             /*
-             * 1. ÀÏÁ¤ Á¶°Ç½Ã (¸ØÃß´Â Á¶°Ç) °ÔÀÓ»ó ¸ðµç°Ô ¸ØÃß°í image¿ÀºêÁ§Æ®°¡ ·£´ýÀ§Ä¡ »ý¼º
-             * 2. ¼Õµ¿ÀÛ ÀÎ½ÄÀ¸·Î image¿ÀºêÁ§Æ® ÀÎ½ÄµÉ¶§ ³ì»öÅ×µÎ¸® º¯È¯µÊ
-             * 3. ¸ðµç image¿ÀºêÁ§Æ® ³ì»öÅ×µÎ¸®·Î º¯È¯µÇ¸é °ÔÀÓ»óÀÇ µ¥ÀÌÅÍ ÃÊ±âÈ­½ÃÅ°°í SceneLoad·Î Menu¾ÀÀ¸·Î ÀüÈ¯
+             * 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç½ï¿½ (ï¿½ï¿½ï¿½ß´ï¿½ ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½Ó»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß°ï¿½ imageï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
+             * 2. ï¿½Õµï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ imageï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Î½ÄµÉ¶ï¿½ ï¿½ï¿½ï¿½ï¿½×µÎ¸ï¿½ ï¿½ï¿½È¯ï¿½ï¿½
+             * 3. ï¿½ï¿½ï¿½ imageï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½×µÎ¸ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½ï¿½Å°ï¿½ï¿½ SceneLoadï¿½ï¿½ Menuï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
              * */
 
             /*

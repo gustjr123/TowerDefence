@@ -7,7 +7,7 @@ public class Cheat : MonoBehaviour
 {
     public void GameScenes()
     {
-        SceneManager.LoadScene("mainMenuUI");
+        
     }
 
     // Start is called before the first frame update
