@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public List<GameObject> prefabs;
+    public GameObject prefabs;
 
     public void Spawn(int index)
     {
-        Instantiate(prefabs[index], transform.position, transform.rotation);
+        Instantiate(prefabs, transform.position, transform.rotation);
     }
 }

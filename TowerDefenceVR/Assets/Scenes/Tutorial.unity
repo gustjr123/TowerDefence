@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -775,8 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56428eabb29609e4e995a44047dc543f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 5779237503992604733, guid: 316b90a3e6d34d340937ff6f41a92823, type: 3}
+  prefabs: {fileID: 5779237503992604733, guid: 316b90a3e6d34d340937ff6f41a92823, type: 3}
 --- !u!1 &400752931
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,8 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56428eabb29609e4e995a44047dc543f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 9083196371460185233, guid: 0e1489f5c7993e5459e3f0bde501dde8, type: 3}
+  prefabs: {fileID: 9083196371460185233, guid: 0e1489f5c7993e5459e3f0bde501dde8, type: 3}
 --- !u!1001 &434639214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,7 +1054,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 571398405}
           m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
-          m_MethodName: GetInput
+          m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1109,7 +1107,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 571398405}
           m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
-          m_MethodName: GetInput
+          m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -7,7 +7,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] private GameObject Explosionparticle;
     public List<GameObject> enemyList;
 
-    [Header("ShockWaveDamage")]
+    [Header("ExplosionDamage")]
     [SerializeField] private int Damage;
 
     // Start is called before the first frame update

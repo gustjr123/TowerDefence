@@ -75,7 +75,7 @@ public class TutorialEvent : MonoBehaviour
         //     }            
         // }
         if (nowPaze == 1 && !IsPaze[nowPaze] && !iswait) {
-            if (target == null && RightHandData == Hands.Calling) {
+            if (target == null && LeftHandData == Hands.Calling) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
 
@@ -147,7 +147,7 @@ public class TutorialEvent : MonoBehaviour
     void firstPaze() {
         target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
         // 상태창 대화문 갱신 필요 X
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Gun);
+        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
     }
 
     void secondPaze() {
@@ -161,7 +161,7 @@ public class TutorialEvent : MonoBehaviour
     }
 
     void fourthPaze() {
-        description.text = "앞의 표시된 손모양을 만들어 보세요.\n본 과정은 눈 앞의 이미지를 따라서 손을 만들 수 있는지를 확인하는 과정입니다.";
+        description.text = "앞의 표시된 손모양을 오른손으로 만들어 보세요.\n본 과정은 눈 앞의 이미지를 따라서 손을 만들 수 있는지를 확인하는 과정입니다.";
         ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
     }
 
