@@ -20,6 +20,7 @@ public class ImageHandle : MonoBehaviour
     8 : Peace
     */
     [SerializeField] private Sprite[] images;
+    [SerializeField] private bool isRight;
     private Image nowimage;
     
     
@@ -28,7 +29,13 @@ public class ImageHandle : MonoBehaviour
     void Start()
     {
         nowimage = imageWindow.GetComponent<Image>();
-        transform.LookAt(GameObject.Find("OVRCameraRig").transform);
+        if (isRight) {
+            transform.LookAt(2 * transform.position - GameObject.Find("OVRCameraRig").transform.position);
+            // transform.rotation = Quaternion.LookRotation(transform.position - GameObject.Find("OVRCameraRig").transform.position);
+        }
+        else {
+            transform.LookAt(GameObject.Find("OVRCameraRig").transform);
+        }
     }
 
     // Update is called once per frame

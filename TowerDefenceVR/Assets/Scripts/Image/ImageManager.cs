@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ImageManager : MonoBehaviour
 {
-    [SerializeField] private GameObject ImagePrefab;
+    [SerializeField] private GameObject LeftHandImage;
+    [SerializeField] private GameObject RightHandImage;
     private GameObject nowImage;
     
     public void ImageSet(Hands hand) {
-        nowImage = Instantiate(ImagePrefab, gameObject.transform.position, gameObject.transform.rotation);
+        nowImage = Instantiate(LeftHandImage, gameObject.transform.position, gameObject.transform.rotation);
         nowImage.GetComponent<ImageHandle>().SelectImage(hand);
     }
 
@@ -17,5 +18,10 @@ public class ImageManager : MonoBehaviour
             nowImage.GetComponent<ImageHandle>().Success();
             Destroy(nowImage, 2.0f);
         }
+    }
+
+    public void RightImageSet(Hands hand) {
+        nowImage = Instantiate(RightHandImage, gameObject.transform.position, gameObject.transform.rotation);
+        nowImage.GetComponent<ImageHandle>().SelectImage(hand);
     }
 }

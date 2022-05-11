@@ -15,7 +15,8 @@ public class TutorialEvent : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
 
     [Header("ImageManager")]
-    [SerializeField] private GameObject ImageManager;
+    [SerializeField] private GameObject RightHandImage;
+    [SerializeField] private GameObject LeftHandImage;
 
     private int nowPaze;
     private int MaxPaze;
@@ -24,6 +25,8 @@ public class TutorialEvent : MonoBehaviour
     // Paze end boolean list here
     private List<bool> IsPaze;
     private GameObject target;
+    private GameObject target2;
+    private GameObject target3;
     private bool iswait;
     private bool isStart;
     private float waittime = 2.1f;
@@ -34,7 +37,7 @@ public class TutorialEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxPaze = 6;
+        MaxPaze = 7;
         DataReset();
     }
 
@@ -58,66 +61,66 @@ public class TutorialEvent : MonoBehaviour
 
                 // 다음페이즈 함수 호출
                 // todo    
-                ImageManager.GetComponent<ImageManager>().ImageSuccess(); // 화면에 입력이 정답임을 표시 (녹색테두리)
+                RightHandImage.GetComponent<ImageManager>().ImageSuccess(); // 화면에 입력이 정답임을 표시 (녹색테두리)
                 // Nextpaze( {Function name of nextpaze} )
                 StartCoroutine(Nextpaze(secondPaze));
             }            
         }
         // todo ==> explosion
-        // if (nowPaze == 1 && !IsPaze[nowPaze]) {
-        //     if (target == null) {
-        //         IsPaze[nowPaze] = true;
-        //         nowPaze++;    
+        if (nowPaze == 1 && !IsPaze[nowPaze]) {
+            if (target == null && target2 == null && target3 == null && LeftHandData == Hands.Peace) {
+                IsPaze[nowPaze] = true;
+                nowPaze++;    
 
-        //         // 다음페이즈 함수 호출
-        //         fourthPaze();   
-        //         ImageManager.GetComponent<ImageManager>().ImageSuccess();
-        //     }            
-        // }
-        if (nowPaze == 1 && !IsPaze[nowPaze] && !iswait) {
+                // 다음페이즈 함수 호출
+                LeftHandImage.GetComponent<ImageManager>().ImageSuccess();
+                StartCoroutine(Nextpaze(thirdPaze));
+            }            
+        }
+        if (nowPaze == 2 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && LeftHandData == Hands.Calling) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
 
                 // 다음페이즈 함수 호출
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                LeftHandImage.GetComponent<ImageManager>().ImageSuccess();
                 StartCoroutine(Nextpaze(fourthPaze));
             }            
         }
-        if (nowPaze == 2 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 3 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Peace) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
 
                 // 다음페이즈 함수 호출
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                RightHandImage.GetComponent<ImageManager>().ImageSuccess();
                 StartCoroutine(Nextpaze(fifthPaze)); 
             }            
         }
-        if (nowPaze == 3 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 4 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Two) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
 
                 // 다음페이즈 함수 호출
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                RightHandImage.GetComponent<ImageManager>().ImageSuccess();
                 StartCoroutine(Nextpaze(sixthPaze));
             }            
         }
-        if (nowPaze == 4 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 5 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Three) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
 
                 // 다음페이즈 함수 호출
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                RightHandImage.GetComponent<ImageManager>().ImageSuccess();
                 StartCoroutine(Nextpaze(lastPaze));
             }            
         }
         #endregion
  
         // data 0은 tutorial 종료 신호로 지정
-        if (RightHandData == Hands.Good && nowPaze == 5) {
+        if (RightHandData == Hands.Good && nowPaze == 6) {
             // 각종 데이터 초기화
             DataReset();
 
@@ -147,35 +150,43 @@ public class TutorialEvent : MonoBehaviour
     void firstPaze() {
         target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
         // 상태창 대화문 갱신 필요 X
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
+        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Shoot);
     }
 
     void secondPaze() {
+        // explosion skill
         target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
-        description.text = "앞의 표시된 손모양을 지어서 스킬을 발동하세요.\n본 스킬발동은 왼손으로만 발동시킬 수 있습니다.";
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Calling);
+        Vector3 v = new Vector3(0.5f, 0.5f, 4.5f);
+        target2 = Instantiate(enemyPrefab, v, gameObject.transform.rotation);
+        v = new Vector3(-0.5f, 0.5f, 4.5f);
+        target3 = Instantiate(enemyPrefab, v, gameObject.transform.rotation);
+
+        description.text = "앞의 표시된 손모양을 지어서 스킬을 발동하세요.\n본 스킬발동은 왼손으로만 발동시킬 수 있습니다.\n본 스킬은 발동시키면 발사속도가 증가하며, 총알이 명중할 시 폭발하게 됩니다.";
+        LeftHandImage.GetComponent<ImageManager>().ImageSet(Hands.Peace);
     }
 
     void thirdPaze() {
-        // explosion skill
+        target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        description.text = "앞의 표시된 손모양을 지어서 스킬을 발동하세요.\n본 스킬발동은 왼손으로만 발동시킬 수 있습니다.";
+        LeftHandImage.GetComponent<ImageManager>().ImageSet(Hands.Calling);
     }
 
     void fourthPaze() {
         description.text = "앞의 표시된 손모양을 오른손으로 만들어 보세요.\n본 과정은 눈 앞의 이미지를 따라서 손을 만들 수 있는지를 확인하는 과정입니다.";
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
+        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Peace);
     }
 
     void fifthPaze() {
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Two);
+        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Two);
     }
 
     void sixthPaze() {
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Three);
+        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Three);
     }
 
     void lastPaze() {
         description.text = "모든 튜토리얼이 종료되었습니다. \n엄지척을 들어 메인메뉴로 돌아가세요";
-        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Good);
+        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Good);
     }
     #endregion
 
