@@ -16,7 +16,7 @@ public class ImageManager : MonoBehaviour
     public void ImageSuccess() {
         if (nowImage != null) {
             nowImage.GetComponent<ImageHandle>().Success();
-            Destroy(nowImage, 2.0f);
+            Destroy(nowImage, 0.8f);
         }
     }
 

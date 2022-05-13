@@ -40,7 +40,6 @@ public class ShootManager : MonoBehaviour
         switch (shootMode)
         {
             case ShootMode.Auto:
-                Debug.Log("Shooting in Auto");
                 if (Time.time >= timeToFire)
                 {
                     timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
@@ -52,7 +51,6 @@ public class ShootManager : MonoBehaviour
                 if (!hasShoot)
                 {
                     hasShoot = true;
-                    Debug.Log("Shooting in Single");
                     timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
                     Shoot();
                 }
@@ -64,7 +62,6 @@ public class ShootManager : MonoBehaviour
     public void StopShoot()
     {
         hasShoot = false;
-        Debug.Log("Stop Shooting");
     }
 
     public void explosionSkillOn() {
