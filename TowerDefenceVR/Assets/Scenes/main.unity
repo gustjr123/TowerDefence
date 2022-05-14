@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -692,53 +692,12 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1975906574}
           m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
-          m_MethodName: LeftHandInput
+          m_MethodName: RightHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 5
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: Four
-    fingerDatas:
-    - {x: 0.000000017372455, y: 2.0150814e-10, z: 0.000000014062628}
-    - {x: 0.000000017372455, y: 2.0150814e-10, z: 0.000000014062628}
-    - {x: -0.0200693, y: -0.01155409, z: -0.010496524}
-    - {x: -0.03595844, y: -0.019157704, z: -0.028028512}
-    - {x: -0.06257436, y: -0.03178574, z: -0.04178399}
-    - {x: -0.08654764, y: -0.042716265, z: -0.020623237}
-    - {x: -0.095996216, y: -0.0073164552, z: -0.023550663}
-    - {x: -0.13350251, y: -0.004690923, z: -0.028537478}
-    - {x: -0.15763697, y: -0.004693806, z: -0.031399697}
-    - {x: -0.095646605, y: -0.0025431588, z: -0.0017259084}
-    - {x: -0.13847974, y: 0.00027675927, z: -0.0014229864}
-    - {x: -0.16602652, y: 0.00042192638, z: -0.001056008}
-    - {x: -0.088693775, y: -0.0065293014, z: 0.017465256}
-    - {x: -0.1271219, y: -0.00428921, z: 0.023706693}
-    - {x: -0.15337586, y: -0.00519903, z: 0.027712792}
-    - {x: -0.03407356, y: -0.00941984, z: 0.022998579}
-    - {x: -0.07789585, y: -0.013691191, z: 0.03505405}
-    - {x: -0.10617331, y: -0.012507435, z: 0.047000844}
-    - {x: -0.12437554, y: -0.014144957, z: 0.055863734}
-    - {x: -0.08566982, y: -0.04301572, z: 0.0039806105}
-    - {x: -0.17999452, y: -0.004719496, z: -0.03258115}
-    - {x: -0.19052032, y: 0.0052367896, z: 0.00017151982}
-    - {x: -0.17761618, y: -0.0057762414, z: 0.030259304}
-    - {x: -0.14496142, y: -0.014773082, z: 0.063476704}
-    onRecognized:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1975906574}
-          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
-          m_MethodName: LeftHandInput
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 6
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -772,8 +731,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: RightHandInput
           m_Mode: 3
           m_Arguments:
@@ -813,8 +772,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: RightHandInput
           m_Mode: 3
           m_Arguments:
@@ -854,14 +813,55 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: RightHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Four
+    fingerDatas:
+    - {x: 0.000000009505676, y: 0.00000011815206, z: 0.00000003238464}
+    - {x: 0.000000009505676, y: 0.00000011815206, z: 0.00000003238464}
+    - {x: -0.020069372, y: -0.011553643, z: -0.010496466}
+    - {x: -0.03595845, y: -0.019157365, z: -0.028028456}
+    - {x: -0.063538164, y: -0.029595748, z: -0.041721426}
+    - {x: -0.087902226, y: -0.03957939, z: -0.020539047}
+    - {x: -0.09599624, y: -0.007316217, z: -0.023550626}
+    - {x: -0.13350853, y: -0.0034660175, z: -0.027610138}
+    - {x: -0.15770277, y: -0.0038238317, z: -0.029885605}
+    - {x: -0.09564658, y: -0.002543345, z: -0.0017259456}
+    - {x: -0.13855396, y: -0.0017645806, z: -0.00069081783}
+    - {x: -0.16593093, y: -0.004748583, z: 0.00007023662}
+    - {x: -0.08869371, y: -0.006529767, z: 0.017465204}
+    - {x: -0.12744878, y: -0.0044206604, z: 0.021247156}
+    - {x: -0.15390179, y: -0.0042564496, z: 0.02376829}
+    - {x: -0.03407353, y: -0.009419981, z: 0.02299856}
+    - {x: -0.077895835, y: -0.013691429, z: 0.035054024}
+    - {x: -0.10775718, y: -0.014554873, z: 0.0422163}
+    - {x: -0.12705308, y: -0.016513072, z: 0.04824832}
+    - {x: -0.086836845, y: -0.040744286, z: 0.00403166}
+    - {x: -0.17979097, y: -0.00019821525, z: -0.030361578}
+    - {x: -0.19068538, y: -0.0017495304, z: 0.0017595142}
+    - {x: -0.17825134, y: -0.00387913, z: 0.024939142}
+    - {x: -0.14842504, y: -0.015770309, z: 0.053230226}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: RightHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -882,14 +882,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 1dfb3b7f8605eec46bdc07113f1e10a3, type: 3}
-        m_TargetAssemblyTypeName: ShootManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1975906574}
+        m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+        m_MethodName: RightHandInput
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1473,7 +1473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253087280}
   m_LocalRotation: {x: -0.000000030908623, y: -0.7071068, z: -0.7071068, w: -0.000000030908623}
-  m_LocalPosition: {x: -0.0047060777, y: 0.010852, z: 0.013974726}
+  m_LocalPosition: {x: -0.005, y: -0.809, z: 0.014}
   m_LocalScale: {x: 0.111382216, y: 0.111382246, z: 0.111382246}
   m_Children: []
   m_Father: {fileID: 649505741}
@@ -1490,7 +1490,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 1, z: 10}
+  m_Size: {x: 10, y: 1, z: 5}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &271038581
 GameObject:
@@ -2103,8 +2103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f28bfaad42b294da12d50bcd95d687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeObject: {fileID: 0}
   LeftHandImage: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
   RightHandImage: {fileID: 336916197900113911, guid: 7507506608122cf418720a9cc41aa672, type: 3}
+  EventManager: {fileID: 0}
 --- !u!1001 &445235737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3520,8 +3522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f28bfaad42b294da12d50bcd95d687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeObject: {fileID: 0}
   LeftHandImage: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
   RightHandImage: {fileID: 336916197900113911, guid: 7507506608122cf418720a9cc41aa672, type: 3}
+  EventManager: {fileID: 0}
 --- !u!1001 &886101108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3857,7 +3861,7 @@ Transform:
   - {fileID: 2031029742}
   - {fileID: 1692386577}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1041925636
 PrefabInstance:
@@ -3959,8 +3963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f28bfaad42b294da12d50bcd95d687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeObject: {fileID: 253087280}
   LeftHandImage: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
   RightHandImage: {fileID: 336916197900113911, guid: 7507506608122cf418720a9cc41aa672, type: 3}
+  EventManager: {fileID: 1975906572}
 --- !u!4 &1070935538
 Transform:
   m_ObjectHideFlags: 0
@@ -3968,14 +3974,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070935536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 0, z: -11.74}
+  m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: 0.45255077, y: -2.7, z: 0.5939711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 870573494}
   - {fileID: 440923829}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1975906573}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078346917
 GameObject:
@@ -4252,8 +4258,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
@@ -4293,55 +4299,14 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 5
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: Four
-    fingerDatas:
-    - {x: 0, y: 0, z: 0}
-    - {x: 0, y: 0, z: 0}
-    - {x: 0.020069284, y: 0.011554096, z: 0.010496524}
-    - {x: 0.03595844, y: 0.019157732, z: 0.028028512}
-    - {x: 0.06422526, y: 0.034145974, z: 0.03381008}
-    - {x: 0.08451913, y: 0.038459245, z: 0.0071356036}
-    - {x: 0.09599624, y: 0.0073164552, z: 0.023550682}
-    - {x: 0.1327905, y: 0.0014550686, z: 0.030643448}
-    - {x: 0.15668438, y: 0.00024047494, z: 0.03491862}
-    - {x: 0.0956466, y: 0.0025431514, z: 0.0017259037}
-    - {x: 0.13843124, y: -0.0009415448, z: 0.0014871489}
-    - {x: 0.16597243, y: -0.0015386045, z: 0.001160549}
-    - {x: 0.08869381, y: 0.0065293014, z: -0.017465245}
-    - {x: 0.12727559, y: 0.0039016753, z: -0.022489205}
-    - {x: 0.15357211, y: 0.002429545, z: -0.026020266}
-    - {x: 0.034073558, y: 0.009419829, z: -0.022998575}
-    - {x: 0.07789585, y: 0.013691172, z: -0.03505407}
-    - {x: 0.10731223, y: 0.008432746, z: -0.04217931}
-    - {x: 0.1264295, y: 0.0056385547, z: -0.04844621}
-    - {x: 0.07983056, y: 0.03234008, z: -0.01624779}
-    - {x: 0.17871422, y: -0.00297606, z: 0.037284967}
-    - {x: 0.19080469, y: -0.004218146, z: 0.00025710464}
-    - {x: 0.17767784, y: -0.0003964752, z: -0.02833118}
-    - {x: 0.14781418, y: 0.0030073375, z: -0.05267759}
-    onRecognized:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
-          m_MethodName: LeftHandInput
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 6
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -4375,8 +4340,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
@@ -4416,8 +4381,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TutorialEvent, Assembly-CSharp
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
           m_MethodName: LeftHandInput
           m_Mode: 3
           m_Arguments:
@@ -4428,7 +4393,48 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  debugMode: 1
+  - name: Four
+    fingerDatas:
+    - {x: 0.00000009039033, y: -0.00000037541, z: 0.000000043442867}
+    - {x: 0.00000009039033, y: -0.00000037541, z: 0.000000043442867}
+    - {x: 0.020069228, y: 0.01155437, z: 0.010496494}
+    - {x: 0.035958335, y: 0.019158164, z: 0.028028466}
+    - {x: 0.06472339, y: 0.0333801, z: 0.03326255}
+    - {x: 0.084878825, y: 0.036690526, z: 0.006340947}
+    - {x: 0.095996246, y: 0.0073166266, z: 0.0235507}
+    - {x: 0.13364571, y: 0.0029622167, z: 0.02497932}
+    - {x: 0.15666005, y: 0.010754749, z: 0.025515523}
+    - {x: 0.09564664, y: 0.0025431663, z: 0.001725927}
+    - {x: 0.1382013, y: 0.0066869333, z: -0.0021023192}
+    - {x: 0.16549355, y: 0.009301543, z: -0.004800327}
+    - {x: 0.08869378, y: 0.00652948, z: -0.017465245}
+    - {x: 0.12726873, y: 0.008488052, z: -0.022835206}
+    - {x: 0.15352064, y: 0.010185905, z: -0.026589893}
+    - {x: 0.03407354, y: 0.009419886, z: -0.022998584}
+    - {x: 0.07789589, y: 0.0136909075, z: -0.035054043}
+    - {x: 0.107323006, y: 0.013979919, z: -0.043868877}
+    - {x: 0.1262793, y: 0.015457094, z: -0.051012497}
+    - {x: 0.0798247, y: 0.030385211, z: -0.016916625}
+    - {x: 0.17881349, y: 0.013811916, z: 0.024448462}
+    - {x: 0.19028962, y: 0.008976892, z: -0.007912263}
+    - {x: 0.17772213, y: 0.012165055, z: -0.028777134}
+    - {x: 0.1473113, y: 0.014192529, z: -0.057191484}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: LeftHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  debugMode: 0
   notRecognize:
     m_PersistentCalls:
       m_Calls:
@@ -4440,6 +4446,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1975906574}
+        m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+        m_MethodName: LeftHandInput
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4461,7 +4479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.024
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4469,7 +4487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.5
+      value: -16.069
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6369,12 +6387,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830727744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7180047, y: 0.8878412, z: 3.5496006}
+  m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: -13.624254, y: -1.8121588, z: -6.95199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1975906573}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843906096
 GameObject:
@@ -6920,7 +6938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1975906573}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!1 &1975906572
 GameObject:
@@ -6933,7 +6951,7 @@ GameObject:
   - component: {fileID: 1975906573}
   - component: {fileID: 1975906574}
   m_Layer: 0
-  m_Name: KCO
+  m_Name: EventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6950,9 +6968,11 @@ Transform:
   m_LocalPosition: {x: -3, y: 2.7, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1070935538}
+  - {fileID: 1830727746}
   - {fileID: 1968049442}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!114 &1975906574
 MonoBehaviour:
@@ -6968,8 +6988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counterText: {fileID: 728878677}
   ImageManager: {fileID: 1070935536}
-  RightHandImage: {fileID: 336916197900113911, guid: 7507506608122cf418720a9cc41aa672, type: 3}
-  LeftHandImage: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
   PauseManager: {fileID: 1968049440}
 --- !u!1 &1976292332
 GameObject:

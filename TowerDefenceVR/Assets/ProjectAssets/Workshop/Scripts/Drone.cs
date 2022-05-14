@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
@@ -26,8 +26,8 @@ public class Drone : MonoBehaviour {
 
 		hp = MAX_HP;
 		attackTime = ATTACK_TIME;
-		killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
-	}
+		killCounterScript = GameObject.Find("EventManager").GetComponent<KillCounter>();
+	} 
 
 
 	void Update()

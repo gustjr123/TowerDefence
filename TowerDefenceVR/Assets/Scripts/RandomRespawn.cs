@@ -7,8 +7,16 @@ public class RandomRespawn : MonoBehaviour
     public GameObject rangeObject;
     BoxCollider rangeCollider;
 
+    [Header("ImageManager")]
+    public GameObject sign;
+
+    private List<GameObject> images;
+    private List<Hands> imageHands;
+
     private void Awake()
     {
+        images = new List<GameObject>();
+        imageHands = new List<Hands>();
         rangeCollider = rangeObject.GetComponent<BoxCollider>();
     }
 
@@ -25,20 +33,23 @@ public class RandomRespawn : MonoBehaviour
         return respawnPosition;
     }
 
-    public GameObject sign;
     private void Start()
     {
-        StartCoroutine(RandomRespawn_Coroutine());
+        // StartCoroutine(RandomRespawn_Coroutine());
     }
 
     IEnumerator RandomRespawn_Coroutine()
     {
-        while (true)
+        for (int i=0; i<4; i++)
         {
             yield return new WaitForSeconds(0.8f);
+            
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ÎºÐ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ Return_RandomPosition() ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+            // GameObject instantCapsul = Instantiate(sign, Return_RandomPosition(), Quaternion.identity);
 
-            // »ý¼º À§Ä¡ ºÎºÐ¿¡ À§¿¡¼­ ¸¸µç ÇÔ¼ö Return_RandomPosition() ÇÔ¼ö ´ëÀÔ
-            GameObject instantCapsul = Instantiate(sign, Return_RandomPosition(), Quaternion.identity);
+            GameObject temp = Instantiate(sign, Return_RandomPosition(), Quaternion.identity);
+            images.Add(temp);
+            // temp.GetComponent<ImageManager>().RandomImage()
         }
     }
 

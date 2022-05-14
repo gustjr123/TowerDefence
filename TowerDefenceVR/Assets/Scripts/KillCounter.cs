@@ -9,13 +9,9 @@ public class KillCounter : MonoBehaviour
 {
     public Text counterText;
     int kills;
-    private GameObject target;
-    int endCondition = 0;
 
-    [Header("ImageManager")]
+    [Header("RandomImageRespawner")]
     [SerializeField] private GameObject ImageManager;
-    [SerializeField] private GameObject RightHandImage;
-    [SerializeField] private GameObject LeftHandImage;
 
     private int nowPaze;
     private int MaxPaze;
@@ -30,78 +26,141 @@ public class KillCounter : MonoBehaviour
     [System.NonSerialized] public Hands RightHandData;
     [System.NonSerialized] public Hands LeftHandData;
 
+    private bool isRight;
     private List<bool> IsPaze;
+    private Hands nowCurrentHand;
+    [System.NonSerialized] public bool readyImage;
 
+    private void Awake() {
+        readyImage = false;
+        MaxPaze = 4;
+        DataReset();
+    }
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         ShowKills();
-
-        if (kills >= 3)
+        
+        if(RightHandData == Hands.Four) {
+            Debug.Log("Four OK");
+        }
+        if(LeftHandData == Hands.Four) {
+            Debug.Log("LFour OK");
+        }
+        if (kills >= 1)
         {
-            nowPaze = 1;
-            ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
-            PauseManager.GetComponent<Pause>().PauseGame();
-            if (RightHandData == Hands.Shoot)
-            {
-                PauseManager.GetComponent<Pause>().NonPause();
-                Debug.Log("1PazeIncounter");
-                ImageManager.GetComponent<ImageManager>().ImageSuccess();
-                StartCoroutine(WaitSecnd());
-                ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
-                Debug.Log("1PazeEnd");
+            //description.text = "������ �����̿���.\n��ȣ�� �����ؼ� ���� �������ּ���.";
+            // ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
+            if (nowPaze == 0) {
                 PauseManager.GetComponent<Pause>().PauseGame();
-                nowPaze++;
-
-
-                if (nowPaze == 2)
-                {
-                    if (LeftHandData == Hands.Shoot)
-                    {
-                        PauseManager.GetComponent<Pause>().NonPause();
-                        Debug.Log("2PazeIncounter");
+                nowPaze = 1;
+                readyImage = false;
+                PazeFunc();
+            }
+            
+            //if (RightHandData == Hands.Peace)
+            // first
+            if (nowPaze == 1 && !IsPaze[nowPaze - 1] && readyImage)
+            {
+                if (isRight) {
+                    if (nowCurrentHand == RightHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 2;
                         ImageManager.GetComponent<ImageManager>().ImageSuccess();
-                        StartCoroutine(WaitSecnd());
-                        ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Two);
-                        nowPaze++;
-                        Debug.Log("2PazeEnd");
-                        PauseManager.GetComponent<Pause>().PauseGame();
-                    }
-
-
-                    if (nowPaze == 3)
-                    {
-                        if (LeftHandData == Hands.Two)
-                        {
-                            PauseManager.GetComponent<Pause>().NonPause();
-                            Debug.Log("3PazeIncounter");
-                            ImageManager.GetComponent<ImageManager>().ImageSuccess();
-                            StartCoroutine(WaitSecnd());
-                            ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
-                            nowPaze++;
-                            Debug.Log("3PazeEnd");
-                            PauseManager.GetComponent<Pause>().PauseGame();
-                        }
-
-                        if (nowPaze == 4)
-                        {
-                            if (RightHandData == Hands.Peace)
-                            {
-                                PauseManager.GetComponent<Pause>().NonPause();
-                                IsPaze[nowPaze] = true;
-                                nowPaze++;
-                                RightHandImage.GetComponent<ImageManager>().ImageSuccess();
-                                StartCoroutine(WaitSecnd());
-                                PauseManager.GetComponent<Pause>().PauseGame();
-                            }
-                        }
+                        readyImage = false;
+                        PazeFunc();
                     }
                 }
+                else {
+                    if (nowCurrentHand == LeftHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 2;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                        PazeFunc();
+                    }
+                }
+            }
+            // second
+            if (nowPaze == 2 && !IsPaze[nowPaze - 1] && readyImage)
+            {
+                if (isRight) {
+                    if (nowCurrentHand == RightHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 3;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                        PazeFunc();
+                    }
+                }
+                else {
+                    if (nowCurrentHand == LeftHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 3;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                        PazeFunc();
+                    }
+                }
+            }
+            // third
+            if (nowPaze == 3 && !IsPaze[nowPaze - 1] && readyImage)
+            {
+                if (isRight) {
+                    if (nowCurrentHand == RightHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 4;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                        PazeFunc();
+                    }
+                }
+                else {
+                    if (nowCurrentHand == LeftHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 4;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                        PazeFunc();
+                    }
+                }
+            }
+            // fourth
+            if (nowPaze == 4 && !IsPaze[nowPaze - 1] && readyImage)
+            {
+                if (isRight) {
+                    if (nowCurrentHand == RightHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 5;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                    }
+                }
+                else {
+                    if (nowCurrentHand == LeftHandData) {
+                        IsPaze[nowPaze - 1] = true;
+                        nowPaze = 5;
+                        ImageManager.GetComponent<ImageManager>().ImageSuccess();
+                        readyImage = false;
+                    }
+                }
+            }
+
+            // Last Paze
+            if (nowPaze >= 5)
+            {
+                PauseManager.GetComponent<Pause>().NonPause();
+
+                DataReset();
+                ImageManager.GetComponent<ImageManager>().Reset();
+                // GameClear and Clear Impact open
+                
+                SceneManager.LoadScene("mainMenuUI");
             }
         }
     }
@@ -118,24 +177,12 @@ public class KillCounter : MonoBehaviour
     }
 
     #region 각 페이즈 함수
-
-    void secondPaze()
-    {
-        LeftHandImage.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
-    }
-
-    void thirdPaze()
-    {
-        LeftHandImage.GetComponent<ImageManager>().ImageSet(Hands.Two);
-    }
-
-    void fourthPaze()
-    {
-        RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Peace);
+    void PazeFunc() {
+        Debug.Log("Image Create : PazeFunc");
+        nowCurrentHand = ImageManager.GetComponent<ImageManager>().RandomImage();
+        isRight = ImageManager.GetComponent<ImageManager>().isRight();
     }
     #endregion
-
-
 
 
     #region Input Hands Gesture
@@ -179,5 +226,14 @@ public class KillCounter : MonoBehaviour
     private IEnumerator WaitSecnd()
     {
         yield return new WaitForSeconds(1f);
+    }
+
+    private void DataReset() {
+        RightHandData = Hands.Temp;
+        nowPaze = 0;
+        IsPaze = new List<bool>(MaxPaze);
+        for (int i=0; i<MaxPaze; i++) {
+            IsPaze.Add(false);
+        }
     }
 }

@@ -27,7 +27,7 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
     public void NonPause()
     {
