@@ -894,36 +894,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &91093369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 91093370}
-  m_Layer: 0
-  m_Name: CoolTimeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &91093370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91093369}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2174828, y: 1.5133038, z: -7.743682}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &124167541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1061,6 +1031,7 @@ GameObject:
   - component: {fileID: 166424838}
   - component: {fileID: 166424841}
   - component: {fileID: 166424840}
+  - component: {fileID: 166424839}
   m_Layer: 5
   m_Name: IceBolt
   m_TagString: Untagged
@@ -1089,6 +1060,21 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 100}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &166424839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166424837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce09304e2b0073e4287108b3f4d9211d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillFilter: {fileID: 1724737035}
+  coolTime: 0
+  coolTimeCounter: {fileID: 2126742354}
 --- !u!114 &166424840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2849,7 +2835,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!222 &689252941
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3975,9 +3961,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1078346918}
   - component: {fileID: 1078346919}
-  - component: {fileID: 1078346922}
-  - component: {fileID: 1078346921}
-  - component: {fileID: 1078346920}
   m_Layer: 0
   m_Name: DetectorLeft
   m_TagString: Untagged
@@ -4120,7 +4103,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1078346920}
+        - m_Target: {fileID: 1767098647}
           m_TargetAssemblyTypeName: SkillBtn, Assembly-CSharp
           m_MethodName: UseSkill
           m_Mode: 1
@@ -4185,7 +4168,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1078346921}
+        - m_Target: {fileID: 1935392156}
           m_TargetAssemblyTypeName: SkillBtn, Assembly-CSharp
           m_MethodName: UseSkill
           m_Mode: 1
@@ -4471,51 +4454,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1078346920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078346917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce09304e2b0073e4287108b3f4d9211d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillFilter: {fileID: 2005512214}
-  coolTime: 4
-  coolTimeCounter: {fileID: 1618812013}
---- !u!114 &1078346921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078346917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce09304e2b0073e4287108b3f4d9211d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillFilter: {fileID: 681844995}
-  coolTime: 4
-  coolTimeCounter: {fileID: 689252940}
---- !u!114 &1078346922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078346917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce09304e2b0073e4287108b3f4d9211d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillFilter: {fileID: 1724737035}
-  coolTime: 0
-  coolTimeCounter: {fileID: 2126742354}
 --- !u!1001 &1093909159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5662,7 +5600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!222 &1618812014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7601,7 +7539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!222 &2126742355
 CanvasRenderer:
   m_ObjectHideFlags: 0

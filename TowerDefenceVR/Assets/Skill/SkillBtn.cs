@@ -16,6 +16,12 @@ public class SkillBtn : MonoBehaviour
         skillFilter.fillAmount = 0;
     }
 
+    void Update()
+    {
+        if (isCooldown == false)
+            skillFilter.fillAmount = 0;
+    }
+
 
     public void UseSkill()
     {
@@ -33,7 +39,8 @@ public class SkillBtn : MonoBehaviour
     {
         while (skillFilter.fillAmount > 0)
         {
-            skillFilter.fillAmount -= 1 * Time.smoothDeltaTime / coolTime;
+            //skillFilter.fillAmount -= 1 * Time.smoothDeltaTime / coolTime;
+            skillFilter.fillAmount += 1 / coolTime * Time.deltaTime;
             yield return null;
         }
         isCooldown = false;
@@ -49,6 +56,7 @@ public class SkillBtn : MonoBehaviour
             currentCoolTime -= 1.0f;
             coolTimeCounter.text = "" + currentCoolTime;
         }
+        isCooldown = false;
         yield break;
     }
 }
