@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class IceBolt : MonoBehaviour
 {
+    #region Configure Variable
     public float speed = 5f;
     public float fireRate = 5f;
     public float timeBeforeDestroyed = 10f;
@@ -10,6 +14,12 @@ public class IceBolt : MonoBehaviour
 
     [Header("IceBoltDamage")]
     [SerializeField] private int Damage;
+
+    [Header("IceBoltCoolTime")]
+    [SerializeField] private int IceBolt_CoolTime;
+    private bool isIceBoltCooling = false;
+    #endregion
+
 
     void Start()
     {
@@ -25,11 +35,20 @@ public class IceBolt : MonoBehaviour
 
     void OnCollisionEnter(Collision co)
     {
+        
         if (co.gameObject.tag != "Bullet" && !collided && !co.gameObject.CompareTag("enemyBug"))
         {
             collided = true;
             speed = 0;
             // Destroy(gameObject);
+        }
+    }
+
+    public void ExplosionSkillActivate()
+    {
+        if (!isIceBoltCooling)
+        {
+            StartCoroutine(IceBoltCoroutine(3f));
         }
     }
 
@@ -42,4 +61,15 @@ public class IceBolt : MonoBehaviour
             // Destroy(gameObject);
         }
     }
+
+    #region Coroutine함수
+    IEnumerator IceBoltCoroutine(float IceBolt_CoolTime)
+    {
+        while (IceBolt_CoolTime > 1.0f)
+        {
+            IceBolt_CoolTime -= Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+    }
+    #endregion
 }

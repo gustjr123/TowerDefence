@@ -52,7 +52,7 @@ public class KillCounter : MonoBehaviour
         if(LeftHandData == Hands.Four) {
             Debug.Log("LFour OK");
         }
-        if (kills >= 10)
+        if (kills >= 100)
         {
             //description.text = "������ �����̿���.\n��ȣ�� �����ؼ� ���� �������ּ���.";
             // ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);

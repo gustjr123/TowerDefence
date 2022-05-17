@@ -83471,7 +83471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920325297268671343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a641c808f0626343b68ee94ede7bd8d, type: 3}
   m_Name: 
@@ -83480,6 +83480,8 @@ MonoBehaviour:
   fireRate: 1
   timeBeforeDestroyed: 8
   Damage: 3
+  explosion: {fileID: 0}
+  IsOnSkill: 0
 --- !u!114 &-7279869955523142217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83487,7 +83489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920325297268671343}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c7cfb4faada41b43a635b3e917beb0f, type: 3}
   m_Name: 
@@ -83496,6 +83498,7 @@ MonoBehaviour:
   fireRate: 5
   timeBeforeDestroyed: 10
   Damage: 10
+  IceBolt_CoolTime: 5
 --- !u!136 &-1463949304601266908
 CapsuleCollider:
   m_ObjectHideFlags: 0

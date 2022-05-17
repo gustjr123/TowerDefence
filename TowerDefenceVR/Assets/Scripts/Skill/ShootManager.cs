@@ -14,7 +14,8 @@ public class ShootManager : MonoBehaviour
     public enum ShootMode
     {
         Auto,
-        Single
+        Single,
+        IceBolt
     }
 
     [Header("ShootMethod")]
@@ -52,6 +53,15 @@ public class ShootManager : MonoBehaviour
                 {
                     hasShoot = true;
                     timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
+                    Shoot();
+                }
+                break;
+
+            case ShootMode.IceBolt:
+                if (!hasShoot)
+                {
+                    hasShoot = true;
+                    timeToFire = Time.time + 3f / bulletPrefab.GetComponent<Bullet>().fireRate;
                     Shoot();
                 }
                 break;
