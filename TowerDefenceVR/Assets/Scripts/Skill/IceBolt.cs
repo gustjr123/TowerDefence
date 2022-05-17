@@ -25,21 +25,21 @@ public class IceBolt : MonoBehaviour
 
     void OnCollisionEnter(Collision co)
     {
-        if (co.gameObject.tag != "Bullet" && !collided)
+        if (co.gameObject.tag != "Bullet" && !collided && !co.gameObject.CompareTag("enemyBug"))
         {
             collided = true;
             speed = 0;
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("enemyBug"))
         {
             // Damage to Enemy
             other.gameObject.GetComponent<Drone>().GetDamage(Damage);
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 }
