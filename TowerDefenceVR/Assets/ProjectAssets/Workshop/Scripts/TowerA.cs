@@ -47,16 +47,16 @@ public class TowerA : MonoBehaviour {
    public void Damage()
    {
       hp--;
-        hpSlider.value = hp;
+      hpSlider.value = hp;
 
-        //게임오버 플래그 킴
-        gameOver = true;
       if(hp <= 0)
       {
-         if(die)
-         {
-            //die.SetActive(true);
-         }
+         //게임오버 플래그 킴
+         gameOver = true;
+         // if(die)
+         // {
+         //    //die.SetActive(true);
+         // }
       }
    }
 }
