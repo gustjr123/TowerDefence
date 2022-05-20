@@ -11,9 +11,6 @@ public class SkillManager : MonoBehaviour
     [Header("WaveSkillSpawnObject")]
     [SerializeField] private GameObject WaveSkill;
 
-    [Header("WaveSkillCooltimeText")]
-    [SerializeField] private Text wave_text;
-
     [Header("WaveSkillCooltime")]
     [SerializeField] private int wave_cooltime;
     private bool isWaveCooling;
@@ -21,9 +18,6 @@ public class SkillManager : MonoBehaviour
 
     [Header("RightShootManager for Explosion")]
     [SerializeField] private GameObject rightHandShoot;
-
-    [Header("ExplosionCooltimeText")]
-    [SerializeField] private Text explosion_text;
 
     [Header("ExplosionCooltime")]
     [SerializeField] private int explosion_cooltime;
@@ -43,14 +37,14 @@ public class SkillManager : MonoBehaviour
     }
 
     public void WaveskillActivate() {
-        if (!isWaveCooling && wave_text != null) {
+        if (!isWaveCooling) {
             WaveSkill.GetComponent<Spawner>().Spawn();
             StartCoroutine(WaveCoroutine());
         }
     }
 
     public void ExplosionSkillActivate() {
-        if (!isExplosionCooling && explosion_text != null) {
+        if (!isExplosionCooling) {
             rightHandShoot.GetComponent<ShootManager>().explosionSkillOn();
             StartCoroutine(ExplosionCoroutine());
         }
@@ -60,13 +54,7 @@ public class SkillManager : MonoBehaviour
     IEnumerator WaveCoroutine() {
         isWaveCooling = true;
         for(int i=wave_cooltime; i>0; i--) {
-            if (wave_text != null) {
-                wave_text.text = (i-1).ToString();
-            }
             yield return waiting;
-        }
-        if (wave_text != null) {
-            wave_text.text = "Can Use";
         }
         isWaveCooling = false;
     }
@@ -74,15 +62,8 @@ public class SkillManager : MonoBehaviour
     IEnumerator ExplosionCoroutine() {
         isExplosionCooling = true;
         for(int i=explosion_cooltime; i>0; i--) {
-            if (explosion_text != null) {
-                explosion_text.text = (i-1).ToString();
-            }
             yield return waiting;
-        }
-        if (explosion_text != null){
-            explosion_text.text = "Can Use";
-        }
-        
+        }        
         isExplosionCooling = false;
     }
 

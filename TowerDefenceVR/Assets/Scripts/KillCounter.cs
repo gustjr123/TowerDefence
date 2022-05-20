@@ -260,7 +260,7 @@ public class KillCounter : MonoBehaviour
     private IEnumerator FinalEndingPaze()
     {
         IsEnd = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(100f);
         DataReset();
         ImageManager.GetComponent<ImageManager>().Reset();
         ShieldEvent.GetComponent<ShieldEvent>().Shield_Clear();
