@@ -979,6 +979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151013118}
   - component: {fileID: 151013119}
+  - component: {fileID: 151013120}
   m_Layer: 0
   m_Name: ShootingLeftHand
   m_TagString: Untagged
@@ -1015,6 +1016,21 @@ MonoBehaviour:
   hand: {fileID: 277819067}
   bulletPrefab: {fileID: 1920325297268671343, guid: 889dd67908ff48640a817f0b0074814e, type: 3}
   shootMode: 2
+--- !u!114 &151013120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151013117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1995ceb76c1158a45aca6664e181d10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 277819067}
+  bulletPrefab: {fileID: 1920325297268671343, guid: 889dd67908ff48640a817f0b0074814e, type: 3}
+  shootMode: 0
 --- !u!4 &152447158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875755424105542, guid: c6a74181d4000004887343fb87b3c53a, type: 3}
@@ -2251,6 +2267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 431396113}
+  - {fileID: 520891459}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2429,11 +2446,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520891458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.53550494, y: -1.2852262, z: 20.141605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1273538041}
+  m_Father: {fileID: 477844567}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &520891460
@@ -4091,8 +4108,8 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 151013119}
-          m_TargetAssemblyTypeName: ShootManager, Assembly-CSharp
+        - m_Target: {fileID: 151013120}
+          m_TargetAssemblyTypeName: IceBoltManager, Assembly-CSharp
           m_MethodName: OnShoot
           m_Mode: 1
           m_Arguments:
@@ -4507,8 +4524,8 @@ MonoBehaviour:
   notRecognize:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 151013119}
-        m_TargetAssemblyTypeName: ShootManager, Assembly-CSharp
+      - m_Target: {fileID: 151013120}
+        m_TargetAssemblyTypeName: IceBoltManager, Assembly-CSharp
         m_MethodName: StopShoot
         m_Mode: 1
         m_Arguments:
@@ -4917,7 +4934,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 151013118}
-  - {fileID: 520891459}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -61,7 +61,7 @@ public class ShootManager : MonoBehaviour
                 if (!hasShoot)
                 {
                     hasShoot = true;
-                    timeToFire = Time.time + 3f / bulletPrefab.GetComponent<Bullet>().fireRate;
+                    timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
                     Shoot();
                 }
                 break;
