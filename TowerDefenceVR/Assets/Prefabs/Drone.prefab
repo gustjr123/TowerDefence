@@ -588,7 +588,7 @@ MonoBehaviour:
   ATTACK_TIME: 2
   MAX_HP: 3
   Deadimpact: {fileID: 100006, guid: 8a4aceaf2957c044480166b429f4c7d0, type: 3}
-  ATTACK_DISTANCE: 1
+  ATTACK_DISTANCE: 2.5
 --- !u!195 &7444981638201159924
 NavMeshAgent:
   m_ObjectHideFlags: 0
