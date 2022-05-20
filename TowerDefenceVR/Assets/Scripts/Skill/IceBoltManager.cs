@@ -34,7 +34,7 @@ public class IceBoltManager : MonoBehaviour
             case ShootMode.IceBolt:
                 if (Time.time >= timeToFire)
                 {
-                    timeToFire = Time.time + 3f / bulletPrefab.GetComponent<Bullet>().fireRate;
+                    timeToFire = Time.time + 2f / bulletPrefab.GetComponent<Bullet>().fireRate;
                     Shoot();
                 }
                 break;

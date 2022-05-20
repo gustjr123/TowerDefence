@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1252,7 +1252,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1797975569}
-          m_TargetAssemblyTypeName: ShootManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: IceBoltManager, Assembly-CSharp
           m_MethodName: OnShoot
           m_Mode: 1
           m_Arguments:
@@ -1668,7 +1668,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1797975569}
-        m_TargetAssemblyTypeName: ShootManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: IceBoltManager, Assembly-CSharp
         m_MethodName: StopShoot
         m_Mode: 1
         m_Arguments:
@@ -2182,8 +2182,8 @@ MonoBehaviour:
   WaveSkill: {fileID: 332787451}
   wave_cooltime: 5
   rightHandShoot: {fileID: 41020446}
-  explosion_cooltime: 5
-  explosion_RunningTime: 2
+  explosion_cooltime: 10
+  explosion_RunningTime: 3
 --- !u!1001 &1115840362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3445,7 +3445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillFilter: {fileID: 153371093}
-  coolTime: 5
+  coolTime: 2
   coolTimeCounter: {fileID: 663718722}
 --- !u!114 &1679746206
 MonoBehaviour:
@@ -3630,12 +3630,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797975567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605483ce8f92ebf4494bbbea432bf5d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1995ceb76c1158a45aca6664e181d10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 478392745}
   bulletPrefab: {fileID: 1920325297268671343, guid: 889dd67908ff48640a817f0b0074814e, type: 3}
-  shootMode: 2
+  shootMode: 0
 --- !u!1 &1813725296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillFilter: {fileID: 1284539794}
-  coolTime: 5
+  coolTime: 10
   coolTimeCounter: {fileID: 1913168789}
 --- !u!114 &1813725299
 MonoBehaviour:

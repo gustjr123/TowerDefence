@@ -59,8 +59,6 @@ public class KillCounter : MonoBehaviour
         }
         if (kills >= 10)
         {
-            //description.text = "������ �����̿���.\n��ȣ�� �����ؼ� ���� �������ּ���.";
-            // ImageManager.GetComponent<ImageManager>().ImageSet(Hands.Peace);
             if (nowPaze == 0) {
                 PauseManager.GetComponent<Pause>().PauseGame();
                 nowPaze = 1;
@@ -260,7 +258,7 @@ public class KillCounter : MonoBehaviour
     private IEnumerator FinalEndingPaze()
     {
         IsEnd = false;
-        yield return new WaitForSeconds(100f);
+        yield return new WaitForSeconds(1f);
         DataReset();
         ImageManager.GetComponent<ImageManager>().Reset();
         ShieldEvent.GetComponent<ShieldEvent>().Shield_Clear();
