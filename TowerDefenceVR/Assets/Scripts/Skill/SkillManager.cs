@@ -31,9 +31,8 @@ public class SkillManager : MonoBehaviour
     [Header("ExplosionRunningtime")]
     [SerializeField] private float explosion_RunningTime;
     private bool isExplosionCooling;
+
     #endregion
-
-
 
 
     private void Start() {
@@ -44,14 +43,14 @@ public class SkillManager : MonoBehaviour
     }
 
     public void WaveskillActivate() {
-        if (!isWaveCooling) {
+        if (!isWaveCooling && wave_text != null) {
             WaveSkill.GetComponent<Spawner>().Spawn();
             StartCoroutine(WaveCoroutine());
         }
     }
 
     public void ExplosionSkillActivate() {
-        if (!isExplosionCooling) {
+        if (!isExplosionCooling && explosion_text != null) {
             rightHandShoot.GetComponent<ShootManager>().explosionSkillOn();
             StartCoroutine(ExplosionCoroutine());
         }
@@ -61,21 +60,31 @@ public class SkillManager : MonoBehaviour
     IEnumerator WaveCoroutine() {
         isWaveCooling = true;
         for(int i=wave_cooltime; i>0; i--) {
-            wave_text.text = (i-1).ToString();
+            if (wave_text != null) {
+                wave_text.text = (i-1).ToString();
+            }
             yield return waiting;
         }
-        wave_text.text = "Can Use";
+        if (wave_text != null) {
+            wave_text.text = "Can Use";
+        }
         isWaveCooling = false;
     }
 
     IEnumerator ExplosionCoroutine() {
         isExplosionCooling = true;
         for(int i=explosion_cooltime; i>0; i--) {
-            explosion_text.text = (i-1).ToString();
+            if (explosion_text != null) {
+                explosion_text.text = (i-1).ToString();
+            }
             yield return waiting;
         }
-        explosion_text.text = "Can Use";
+        if (explosion_text != null){
+            explosion_text.text = "Can Use";
+        }
+        
         isExplosionCooling = false;
     }
+
     #endregion
 }

@@ -31,6 +31,11 @@ public class KillCounter : MonoBehaviour
     private Hands nowCurrentHand;
     [System.NonSerialized] public bool readyImage;
 
+    [Header("ShieldEvent")]
+    [SerializeField] private GameObject ShieldEvent;
+
+    private bool IsEnd = false;
+
     private void Awake() {
         readyImage = false;
         MaxPaze = 4;
@@ -76,6 +81,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield1();
                     }
                 }
                 else {
@@ -86,6 +92,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield1();
                     }
                 }
             }
@@ -100,6 +107,8 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
                 else {
@@ -110,6 +119,8 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
             }
@@ -124,6 +135,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
                     }
                 }
                 else {
@@ -134,6 +146,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
                     }
                 }
             }
@@ -147,6 +160,9 @@ public class KillCounter : MonoBehaviour
                         ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                         readyImage = false;
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield5();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
+                        IsEnd = true;
                     }
                 }
                 else {
@@ -156,21 +172,24 @@ public class KillCounter : MonoBehaviour
                         ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                         readyImage = false;
                         Debug.Log("nowPaze : " + nowPaze.ToString());
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield5();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
+                        IsEnd = true;
                     }
                 }
             }
 
             // Last Paze
-            if (nowPaze >= 5)
+            if (nowPaze >= 5 && IsEnd)
             {
                 Debug.Log("Last Paze");
                 PauseManager.GetComponent<Pause>().NonPause();
-
-                DataReset();
-                ImageManager.GetComponent<ImageManager>().Reset();
-                // GameClear and Clear Impact open
+                StartCoroutine(FinalEndingPaze());
+                // DataReset();
+                // ImageManager.GetComponent<ImageManager>().Reset();
+                // // GameClear and Clear Impact open
                 
-                SceneManager.LoadScene("resultScene");
+                // SceneManager.LoadScene("resultScene");
             }
         }
     }
@@ -236,6 +255,18 @@ public class KillCounter : MonoBehaviour
     private IEnumerator WaitSecnd()
     {
         yield return new WaitForSeconds(1f);
+    }
+
+    private IEnumerator FinalEndingPaze()
+    {
+        IsEnd = false;
+        yield return new WaitForSeconds(3f);
+        DataReset();
+        ImageManager.GetComponent<ImageManager>().Reset();
+        ShieldEvent.GetComponent<ShieldEvent>().Shield_Clear();
+        // GameClear and Clear Impact open
+        
+        SceneManager.LoadScene("resultScene");
     }
 
     private void DataReset() {
