@@ -7,7 +7,7 @@ public class IceBolt : MonoBehaviour
 {
     #region Configure Variable
     public float speed = 5f;
-    public float fireRate = 5f;
+    public float fireRate = 1f;
     public float timeBeforeDestroyed = 10f;
     private bool collided = false;
     private Rigidbody rb = null;
