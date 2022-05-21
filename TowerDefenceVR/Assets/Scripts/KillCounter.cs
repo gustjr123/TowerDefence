@@ -106,7 +106,6 @@ public class KillCounter : MonoBehaviour
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
                         ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
                 else {
@@ -118,7 +117,6 @@ public class KillCounter : MonoBehaviour
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
                         ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
             }
@@ -133,7 +131,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
                 else {
@@ -144,7 +142,7 @@ public class KillCounter : MonoBehaviour
                         readyImage = false;
                         PazeFunc();
                         Debug.Log("nowPaze : " + nowPaze.ToString());
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
                     }
                 }
             }
@@ -158,7 +156,7 @@ public class KillCounter : MonoBehaviour
                         ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                         readyImage = false;
                         Debug.Log("nowPaze : " + nowPaze.ToString());
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield5();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
                         ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
                         IsEnd = true;
                     }
@@ -170,7 +168,7 @@ public class KillCounter : MonoBehaviour
                         ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                         readyImage = false;
                         Debug.Log("nowPaze : " + nowPaze.ToString());
-                        ShieldEvent.GetComponent<ShieldEvent>().OnShield5();
+                        ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
                         ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
                         IsEnd = true;
                     }
@@ -258,10 +256,9 @@ public class KillCounter : MonoBehaviour
     private IEnumerator FinalEndingPaze()
     {
         IsEnd = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(10f);
         DataReset();
         ImageManager.GetComponent<ImageManager>().Reset();
-        ShieldEvent.GetComponent<ShieldEvent>().Shield_Clear();
         // GameClear and Clear Impact open
         
         SceneManager.LoadScene("resultScene");

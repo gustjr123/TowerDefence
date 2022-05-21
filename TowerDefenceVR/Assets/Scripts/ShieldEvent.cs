@@ -4,40 +4,22 @@ using UnityEngine;
 
 public class ShieldEvent : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> ShieldPosition;
+    [Header("Shield Prefab")]
     [SerializeField] private GameObject Shield_Big;
-    [SerializeField] private GameObject Shield_small;
-    [SerializeField] private int MaxSize;
-
-    [SerializeField] private List<GameObject> ShieldPrefabs;
-    private void Start() {
-        List<GameObject> ShieldPrefabs = new List<GameObject>();
-
-    }
     
     public void OnShield1() {
-        ShieldPrefabs.Add(Instantiate(Shield_Big, ShieldPosition[0].transform.position, ShieldPosition[0].transform.rotation));
+        Instantiate(Shield_Big, new Vector3(-17.28f, 1.11f, 14f), gameObject.transform.rotation);
     }
     public void OnShield2() {
-        ShieldPrefabs.Add(Instantiate(Shield_Big, ShieldPosition[1].transform.position, ShieldPosition[1].transform.rotation));
+        Instantiate(Shield_Big, new Vector3(18.82f, -0.3f, 11.32f), gameObject.transform.rotation);
     }
     public void OnShield3() {
-        ShieldPrefabs.Add(Instantiate(Shield_Big, ShieldPosition[2].transform.position, ShieldPosition[2].transform.rotation));
+        Instantiate(Shield_Big, new Vector3(-16.52f, -1.98f, 3.06f), gameObject.transform.rotation);
     }
     public void OnShield4() {
-        ShieldPrefabs.Add(Instantiate(Shield_Big, ShieldPosition[3].transform.position, ShieldPosition[3].transform.rotation));
-    }
-    public void OnShield5() {
-        ShieldPrefabs.Add(Instantiate(Shield_Big, ShieldPosition[4].transform.position, ShieldPosition[4].transform.rotation));
+        Instantiate(Shield_Big, new Vector3(0.35f, 2.98f, 13.18f), gameObject.transform.rotation);
     }
     public void OnShieldTower() {
-        ShieldPrefabs.Add(Instantiate(Shield_small, ShieldPosition[5].transform.position, ShieldPosition[5].transform.rotation));
-    }
-
-    public void Shield_Clear() {
-        foreach(GameObject i in ShieldPrefabs) {
-            Destroy(i);
-        }
-        ShieldPrefabs.Clear();
+        Instantiate(Shield_Big, new Vector3(1.09f, 3.54f, -8.07f), gameObject.transform.rotation);
     }
 }
