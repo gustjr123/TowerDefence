@@ -49,6 +49,7 @@ public class KillCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //PauseManager.GetComponent<Pause>().PauseGame();
         ShowKills();
         
         if(RightHandData == Hands.Four) {
@@ -272,5 +273,10 @@ public class KillCounter : MonoBehaviour
         for (int i=0; i<MaxPaze; i++) {
             IsPaze.Add(false);
         }
+    }
+
+    public void NonPause()
+    {
+        PauseManager.GetComponent<Pause>().NonPause();
     }
 }
