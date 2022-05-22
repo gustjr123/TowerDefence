@@ -265,6 +265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547ffa9a2bef32548affd2a22dabf4f8, type: 3}
+--- !u!1 &65070087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1474613188913336, guid: c6a74181d4000004887343fb87b3c53a, type: 3}
+  m_PrefabInstance: {fileID: 833263412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &65127040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4913291532809462, guid: c6a74181d4000004887343fb87b3c53a, type: 3}
@@ -866,7 +871,130 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  debugMode: 0
+  - name: R_Circle
+    fingerDatas:
+    - {x: -0.000000073838706, y: 0.00000007927435, z: -0.00000030996767}
+    - {x: -0.000000073838706, y: 0.00000007927435, z: -0.00000030996767}
+    - {x: -0.020069398, y: -0.011553999, z: -0.010496901}
+    - {x: -0.03595829, y: -0.019157847, z: -0.028028082}
+    - {x: -0.05006287, y: -0.04610006, z: -0.03952892}
+    - {x: -0.07083303, y: -0.072359145, z: -0.044115365}
+    - {x: -0.095996305, y: -0.007316407, z: -0.023550743}
+    - {x: -0.13193938, y: -0.013767153, z: -0.013305806}
+    - {x: -0.14328991, y: -0.034883015, z: -0.009312086}
+    - {x: -0.095646605, y: -0.0025431663, z: -0.0017258395}
+    - {x: -0.13673833, y: -0.013394274, z: 0.004311342}
+    - {x: -0.14742929, y: -0.038766302, z: 0.0052849837}
+    - {x: -0.088693865, y: -0.006529227, z: 0.017464906}
+    - {x: -0.12580895, y: -0.01693869, z: 0.023364509}
+    - {x: -0.1402255, y: -0.039248243, z: 0.022594735}
+    - {x: -0.034073435, y: -0.009419952, z: 0.022998989}
+    - {x: -0.07789575, y: -0.013691291, z: 0.035054523}
+    - {x: -0.107677415, y: -0.020368028, z: 0.03854969}
+    - {x: -0.12054879, y: -0.036004037, z: 0.037002105}
+    - {x: -0.084011436, y: -0.092891425, z: -0.047426827}
+    - {x: -0.14896357, y: -0.056228697, z: -0.005647149}
+    - {x: -0.15093751, y: -0.06350632, z: 0.004771605}
+    - {x: -0.14307174, y: -0.06295006, z: 0.017641176}
+    - {x: -0.13021478, y: -0.05472511, z: 0.030819762}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: RightHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Tri
+    fingerDatas:
+    - {x: 0.000000013069378, y: -0.000000025925383, z: -0.00000005998298}
+    - {x: 0.000000013069378, y: -0.000000025925383, z: -0.00000005998298}
+    - {x: -0.020069323, y: -0.011554132, z: -0.010496646}
+    - {x: -0.035958454, y: -0.019157719, z: -0.028028568}
+    - {x: -0.058389958, y: -0.042441875, z: -0.031460032}
+    - {x: -0.085480936, y: -0.062370133, z: -0.028157625}
+    - {x: -0.095996335, y: -0.007316489, z: -0.02355094}
+    - {x: -0.13333982, y: -0.013162836, z: -0.020427205}
+    - {x: -0.15721631, y: -0.017043509, z: -0.01807706}
+    - {x: -0.09564662, y: -0.0025431179, z: -0.0017258138}
+    - {x: -0.13781688, y: -0.010224927, z: 0.0005940553}
+    - {x: -0.1648863, y: -0.015043713, z: 0.0023280103}
+    - {x: -0.08869373, y: -0.006529223, z: 0.017465651}
+    - {x: -0.12679115, y: -0.014319796, z: 0.020396816}
+    - {x: -0.15267967, y: -0.019934889, z: 0.022495445}
+    - {x: -0.034073602, y: -0.009419838, z: 0.022998469}
+    - {x: -0.077895954, y: -0.013691237, z: 0.0350537}
+    - {x: -0.10777289, y: -0.020816788, z: 0.03563549}
+    - {x: -0.12741423, y: -0.025495317, z: 0.03784432}
+    - {x: -0.102153674, y: -0.0800429, z: -0.032147933}
+    - {x: -0.1792888, y: -0.016366556, z: -0.0143890735}
+    - {x: -0.18971041, y: -0.01370018, z: 0.004895825}
+    - {x: -0.17692462, y: -0.022142857, z: 0.023808274}
+    - {x: -0.14924625, y: -0.027676083, z: 0.038702354}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: RightHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Circle_2
+    fingerDatas:
+    - {x: -0.000000033219166, y: 0.000000012432687, z: -0.00000008207022}
+    - {x: -0.000000033219166, y: 0.000000012432687, z: -0.00000008207022}
+    - {x: -0.020069148, y: -0.011554157, z: -0.010496215}
+    - {x: -0.03595838, y: -0.01915774, z: -0.028028425}
+    - {x: -0.05097673, y: -0.042012334, z: -0.045612663}
+    - {x: -0.07237559, y: -0.064502396, z: -0.058964312}
+    - {x: -0.09599611, y: -0.0073164925, z: -0.023550428}
+    - {x: -0.1320203, y: 0.0007958822, z: -0.014894228}
+    - {x: -0.15184258, y: -0.012238599, z: -0.009617358}
+    - {x: -0.0956466, y: -0.002543144, z: -0.0017258115}
+    - {x: -0.13709962, y: 0.0030092895, z: 0.007946245}
+    - {x: -0.15743722, y: -0.015085973, z: 0.01217987}
+    - {x: -0.088693805, y: -0.006529309, z: 0.017465256}
+    - {x: -0.12653702, y: -0.0036031082, z: 0.026410783}
+    - {x: -0.14783442, y: -0.019360505, z: 0.02847702}
+    - {x: -0.034073703, y: -0.009419782, z: 0.022998199}
+    - {x: -0.077895805, y: -0.013691198, z: 0.03505414}
+    - {x: -0.10830398, y: -0.013946481, z: 0.039416347}
+    - {x: -0.12648712, y: -0.022904426, z: 0.0407108}
+    - {x: -0.08682813, y: -0.08260472, z: -0.067308836}
+    - {x: -0.16712996, y: -0.027649239, z: -0.0041340142}
+    - {x: -0.16579112, y: -0.038641058, z: 0.012255769}
+    - {x: -0.1588127, y: -0.040946096, z: 0.025655998}
+    - {x: -0.14456417, y: -0.03512361, z: 0.038251743}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: RightHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  debugMode: 1
   notRecognize:
     m_PersistentCalls:
       m_Calls:
@@ -889,7 +1017,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1368,6 +1496,11 @@ Transform:
   m_Father: {fileID: 833263413}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 115, z: 0}
+--- !u!1 &283270985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4577494288505589728, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+  m_PrefabInstance: {fileID: 738439091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &293486111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2428,6 +2561,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559350444}
   m_CullTransparentMesh: 1
+--- !u!1 &577352871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1109363208795868, guid: e201a24a09e942042b93390d0444d728, type: 3}
+  m_PrefabInstance: {fileID: 66824369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &587715345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2943,6 +3081,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728878675}
   m_CullTransparentMesh: 1
+--- !u!1001 &738439091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1975906573}
+    m_Modifications:
+    - target: {fileID: 4577494288505589732, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290378106322, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5bc9483b1565eb54bac6632f1f2df1d1, type: 3}
+    - target: {fileID: 4577494290431623281, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_Name
+      value: LeftHandImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623286, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: images.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623286, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5bc9483b1565eb54bac6632f1f2df1d1, type: 3}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.24999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
 --- !u!1 &758656627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,7 +4385,130 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  debugMode: 0
+  - name: L_Circle
+    fingerDatas:
+    - {x: -0.00000010477064, y: -0.00000006923463, z: -0.00000036743967}
+    - {x: -0.00000010477064, y: -0.00000006923463, z: -0.00000036743967}
+    - {x: 0.02006933, y: 0.011554099, z: 0.010496562}
+    - {x: 0.03595852, y: 0.019157782, z: 0.028028853}
+    - {x: 0.05174151, y: 0.04587804, z: 0.037723437}
+    - {x: 0.07359746, y: 0.071373835, z: 0.04149937}
+    - {x: 0.09599629, y: 0.0073164925, z: 0.023550913}
+    - {x: 0.1332957, y: 0.01023972, z: 0.017331056}
+    - {x: 0.1465919, y: 0.030390814, z: 0.014535025}
+    - {x: 0.09564674, y: 0.0025431886, z: 0.0017262287}
+    - {x: 0.13724263, y: 0.012128562, z: -0.0028144717}
+    - {x: 0.15270503, y: 0.034898117, z: -0.0040131174}
+    - {x: 0.08869391, y: 0.0065293536, z: -0.017464861}
+    - {x: 0.12649918, y: 0.0151736885, z: -0.021555291}
+    - {x: 0.14469905, y: 0.034528002, z: -0.020998448}
+    - {x: 0.034073483, y: 0.009419747, z: -0.022998985}
+    - {x: 0.077895865, y: 0.013691187, z: -0.035054028}
+    - {x: 0.10821823, y: 0.018328592, z: -0.036725134}
+    - {x: 0.1253189, y: 0.029285192, z: -0.03645504}
+    - {x: 0.08931076, y: 0.08970706, z: 0.03668298}
+    - {x: 0.16115668, y: 0.046778366, z: 0.009999335}
+    - {x: 0.1592299, y: 0.059018716, z: -0.003507696}
+    - {x: 0.15352586, y: 0.05691412, z: -0.017077424}
+    - {x: 0.14052945, y: 0.044430524, z: -0.03183006}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: LeftHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Tri
+    fingerDatas:
+    - {x: -0.00000010232021, y: -0.000000029441447, z: -0.0000003109478}
+    - {x: -0.00000010232021, y: -0.000000029441447, z: -0.0000003109478}
+    - {x: 0.020069188, y: 0.011554051, z: 0.01049613}
+    - {x: 0.035958342, y: 0.019157648, z: 0.028028134}
+    - {x: 0.056485552, y: 0.0442625, z: 0.030366778}
+    - {x: 0.08184296, y: 0.06567176, z: 0.023993112}
+    - {x: 0.095996216, y: 0.0073163956, z: 0.023550496}
+    - {x: 0.13320594, y: 0.007944718, z: 0.016234472}
+    - {x: 0.1569764, y: 0.00849244, z: 0.0112014115}
+    - {x: 0.095646754, y: 0.0025431663, z: 0.0017262809}
+    - {x: 0.13832523, y: 0.006635651, z: -0.0003984049}
+    - {x: 0.16571185, y: 0.009159878, z: -0.0020057783}
+    - {x: 0.08869368, y: 0.006529227, z: -0.017465658}
+    - {x: 0.12757553, y: 0.009389654, z: -0.018311474}
+    - {x: 0.15404332, y: 0.011657223, z: -0.018991921}
+    - {x: 0.03407362, y: 0.00941987, z: -0.022998367}
+    - {x: 0.077895895, y: 0.013691179, z: -0.035053924}
+    - {x: 0.10837419, y: 0.016678482, z: -0.032625362}
+    - {x: 0.12859052, y: 0.018627197, z: -0.03284478}
+    - {x: 0.09778114, y: 0.08443716, z: 0.024193235}
+    - {x: 0.17820954, y: 0.004765302, z: 0.005158432}
+    - {x: 0.19034952, y: 0.0057378113, z: -0.0044365674}
+    - {x: 0.17840715, y: 0.0107512325, z: -0.01897787}
+    - {x: 0.15049301, y: 0.017822057, z: -0.031514924}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: LeftHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Circle_2
+    fingerDatas:
+    - {x: -0.00000002186101, y: 0.0000000016956889, z: 0.00000003599414}
+    - {x: -0.00000002186101, y: 0.0000000016956889, z: 0.00000003599414}
+    - {x: 0.020069294, y: 0.011553969, z: 0.010496804}
+    - {x: 0.035958443, y: 0.019157544, z: 0.028028853}
+    - {x: 0.05085174, y: 0.042961136, z: 0.0444198}
+    - {x: 0.0731843, y: 0.06698078, z: 0.052561544}
+    - {x: 0.09599624, y: 0.007316567, z: 0.023550402}
+    - {x: 0.13218954, y: -0.0007453114, z: 0.01558008}
+    - {x: 0.15307668, y: 0.010587826, z: 0.010484768}
+    - {x: 0.095646575, y: 0.002543278, z: 0.001725643}
+    - {x: 0.13753399, y: -0.0031864196, z: -0.0057132933}
+    - {x: 0.1587533, y: 0.014082879, z: -0.008953527}
+    - {x: 0.088693775, y: 0.006529443, z: -0.017465534}
+    - {x: 0.12705702, y: 0.0046664774, z: -0.024209809}
+    - {x: 0.14893304, y: 0.019712165, z: -0.025311027}
+    - {x: 0.034073554, y: 0.009419806, z: -0.022998523}
+    - {x: 0.07789585, y: 0.013691224, z: -0.03505418}
+    - {x: 0.10837713, y: 0.015207976, z: -0.038565885}
+    - {x: 0.124625966, y: 0.027383476, z: -0.038030513}
+    - {x: 0.0886946, y: 0.0859001, z: 0.055336267}
+    - {x: 0.16828153, y: 0.026226953, z: 0.005437115}
+    - {x: 0.17251308, y: 0.03490624, z: -0.010252882}
+    - {x: 0.1640636, y: 0.03871052, z: -0.023178495}
+    - {x: 0.14377396, y: 0.037961558, z: -0.0361372}
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1975906574}
+          m_TargetAssemblyTypeName: KillCounter, Assembly-CSharp
+          m_MethodName: LeftHandInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  debugMode: 1
   notRecognize:
     m_PersistentCalls:
       m_Calls:
@@ -4189,7 +4531,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4610,6 +4952,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1361831434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1603907026097434, guid: c6a74181d4000004887343fb87b3c53a, type: 3}
+  m_PrefabInstance: {fileID: 833263412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1379503235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4969639723282940, guid: e201a24a09e942042b93390d0444d728, type: 3}
@@ -6568,6 +6915,7 @@ Transform:
   - {fileID: 1830727746}
   - {fileID: 1968049442}
   - {fileID: 365464274}
+  - {fileID: 2074089783}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
@@ -6587,6 +6935,12 @@ MonoBehaviour:
   ImageManager: {fileID: 1070935536}
   PauseManager: {fileID: 1968049440}
   ShieldEvent: {fileID: 365464272}
+  lefttip: {fileID: 65070087}
+  righttip: {fileID: 577352871}
+  leftthump: {fileID: 1361831434}
+  rightthump: {fileID: 2045753887}
+  ClearImage: {fileID: 2074089782}
+  ImageCanvas: {fileID: 283270985}
 --- !u!1 &1976292332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6982,6 +7336,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042128359}
   m_CullTransparentMesh: 1
+--- !u!1 &2045753887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1178928620431016, guid: e201a24a09e942042b93390d0444d728, type: 3}
+  m_PrefabInstance: {fileID: 66824369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2074089782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4577494290431623283, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+  m_PrefabInstance: {fileID: 738439091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2074089783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4577494290431623287, guid: 8a477dd8e8f68df4e892e0f5bb193bd1, type: 3}
+  m_PrefabInstance: {fileID: 738439091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085869450
 GameObject:
   m_ObjectHideFlags: 0

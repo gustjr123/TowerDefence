@@ -37,6 +37,17 @@ public class KillCounter : MonoBehaviour
 
     private bool IsEnd = false;
 
+    // for ending as calculate tip distance
+    [Header("fingerTip Object of OVRCamera")]
+    [SerializeField] private GameObject lefttip;
+    [SerializeField] private GameObject righttip;
+    [SerializeField] private GameObject leftthump;
+    [SerializeField] private GameObject rightthump;
+    // calculation rate time 
+    private float timeTo = 0f;
+    [SerializeField] private GameObject ClearImage;
+    [SerializeField] private GameObject ImageCanvas;
+
     private void Awake() {
         readyImage = false;
         MaxPaze = 4;
@@ -45,6 +56,26 @@ public class KillCounter : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private bool tipDistance() {
+        if (Time.time >= timeTo){
+            Vector3 v1 = gameObject.transform.InverseTransformPoint(lefttip.transform.position);
+            Vector3 v2 = gameObject.transform.InverseTransformPoint(righttip.transform.position);
+
+            float one = Vector3.Distance(v1, v2);
+
+            v1 = gameObject.transform.InverseTransformPoint(leftthump.transform.position);
+            v2 = gameObject.transform.InverseTransformPoint(rightthump.transform.position);
+
+            float two = Vector3.Distance(v1, v2);
+            if (one <= 0.015f && two <= 0.015f) {
+                return true;
+            }
+            // calculation rate
+            timeTo = 0.5f + Time.time;
+        }
+        return false;
     }
 
     private bool ImageCheckPerPaze() {
@@ -124,15 +155,19 @@ public class KillCounter : MonoBehaviour
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield4();
                     ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
+                    ClearImage.GetComponent<Renderer>().enabled = true;
+                    ImageCanvas.GetComponent<Canvas>().enabled = true;
                 }
             }
         }
         // ending
-        if (TimeManager.Minute >= 20 && nowPaze == 4) {
+        if (TimeManager.Minute >= 20 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
         // if (kills >= 20 && nowPaze == 4) {
-            Debug.Log("Last Paze");
-            PauseManager.GetComponent<Pause>().NonPause();
-            StartCoroutine(FinalEndingPaze());
+            if (tipDistance()) {
+                Debug.Log("Last Paze");
+                PauseManager.GetComponent<Pause>().NonPause();
+                StartCoroutine(FinalEndingPaze());
+            }
         }
     }
 
@@ -159,7 +194,7 @@ public class KillCounter : MonoBehaviour
     #region Input Hands Gesture
     public void RightHandInput(int data)
     {
-        // enum Hands { Gun, Shoot, Good, Boom, Two, Three, Four, Five, Peace, Temp }
+        // enum Hands { Gun, Shoot, Good, Boom, Two, Three, Four, Five, Peace, Temp, Circle }
         switch (data)
         {
             case 0: RightHandData = Hands.Gun; break;
@@ -172,12 +207,13 @@ public class KillCounter : MonoBehaviour
             case 7: RightHandData = Hands.Five; break;
             case 8: RightHandData = Hands.Peace; break;
             case 9: RightHandData = Hands.Temp; break;
+            case 10: RightHandData = Hands.Circle; break;
         }
     }
 
     public void LeftHandInput(int data)
     {
-        // enum Hands { Gun, Shoot, Good, Boom, Two, Three, Four, Five, Peace, Temp }
+        // enum Hands { Gun, Shoot, Good, Boom, Two, Three, Four, Five, Peace, Temp, Circle }
         switch (data)
         {
             case 0: LeftHandData = Hands.Gun; break;
@@ -190,6 +226,7 @@ public class KillCounter : MonoBehaviour
             case 7: LeftHandData = Hands.Five; break;
             case 8: LeftHandData = Hands.Peace; break;
             case 9: LeftHandData = Hands.Temp; break;
+            case 10: LeftHandData = Hands.Circle; break;
         }
     }
     #endregion
@@ -218,5 +255,8 @@ public class KillCounter : MonoBehaviour
         for (int i=0; i<MaxPaze; i++) {
             IsPaze.Add(false);
         }
+        
+        ClearImage.GetComponent<Renderer>().enabled = false;
+        ImageCanvas.GetComponent<Canvas>().enabled = false;
     }
 }
