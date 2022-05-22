@@ -15,5 +15,6 @@ public enum Hands : int{
     Five = 7,
     Peace = 8,
     // Temp is no recognized hand
+    Circle = 10,
     Temp = 9
 }
