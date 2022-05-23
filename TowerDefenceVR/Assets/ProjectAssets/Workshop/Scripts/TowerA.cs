@@ -40,8 +40,10 @@ public class TowerA : MonoBehaviour {
         if (gameOver == true)
         {
             isClear = false;
-            SceneManager.LoadScene("resultScene");
+            SceneManager.LoadScene("resultFailed");
         }
+        else
+            SceneManager.LoadScene("resultClear");
     }
 
    public void Damage()
