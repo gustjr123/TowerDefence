@@ -12,6 +12,7 @@ TagManager:
   - Hand
   - DialogPanel
   - Boss
+  - Panel
   layers:
   - Default
   - TransparentFX
