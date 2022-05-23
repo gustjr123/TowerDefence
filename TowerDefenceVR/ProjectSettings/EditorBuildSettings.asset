@@ -14,9 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: b060b07aa208d3e4ea60d24277efba69
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/resultScene.unity
     guid: 449fb39e61b096943b7f5ee5af504e8e
+  - enabled: 1
+    path: Assets/Scenes/resultFailed.unity
+    guid: d1b00e571f53c1245b19cde26a30a167
+  - enabled: 1
+    path: Assets/Scenes/resultClear.unity
+    guid: 3a4c9f6578bd02748bbf1cbfb5c488b5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 597c209d635cc374d8a529bd4431d917, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: af009c24e1397284cb2424c24933a6f1, type: 2}

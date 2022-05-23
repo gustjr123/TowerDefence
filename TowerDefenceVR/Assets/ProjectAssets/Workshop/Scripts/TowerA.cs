@@ -42,8 +42,8 @@ public class TowerA : MonoBehaviour {
             isClear = false;
             SceneManager.LoadScene("resultFailed");
         }
-        else
-            SceneManager.LoadScene("resultClear");
+      //   else
+      //       SceneManager.LoadScene("resultClear");
     }
 
    public void Damage()

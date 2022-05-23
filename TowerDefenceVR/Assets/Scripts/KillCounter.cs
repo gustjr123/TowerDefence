@@ -244,7 +244,8 @@ public class KillCounter : MonoBehaviour
         ImageManager.GetComponent<ImageManager>().Reset();
         // GameClear and Clear Impact open
         
-        SceneManager.LoadScene("resultScene");
+        SceneManager.LoadScene("resultClear");
+        // SceneManager.LoadScene("resultScene");
     }
 
     private void DataReset() {
