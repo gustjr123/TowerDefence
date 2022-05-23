@@ -11,9 +11,6 @@ public class SkillManager : MonoBehaviour
     [Header("WaveSkillSpawnObject")]
     [SerializeField] private GameObject WaveSkill;
 
-    [Header("WaveSkillCooltimeText")]
-    [SerializeField] private Text wave_text;
-
     [Header("WaveSkillCooltime")]
     [SerializeField] private int wave_cooltime;
     private bool isWaveCooling;
@@ -22,16 +19,15 @@ public class SkillManager : MonoBehaviour
     [Header("RightShootManager for Explosion")]
     [SerializeField] private GameObject rightHandShoot;
 
-    [Header("ExplosionCooltimeText")]
-    [SerializeField] private Text explosion_text;
-
     [Header("ExplosionCooltime")]
     [SerializeField] private int explosion_cooltime;
 
     [Header("ExplosionRunningtime")]
     [SerializeField] private float explosion_RunningTime;
     private bool isExplosionCooling;
-    #endregion 
+
+    #endregion
+
 
     private void Start() {
         // Use
@@ -58,21 +54,18 @@ public class SkillManager : MonoBehaviour
     IEnumerator WaveCoroutine() {
         isWaveCooling = true;
         for(int i=wave_cooltime; i>0; i--) {
-            wave_text.text = (i-1).ToString();
             yield return waiting;
         }
-        wave_text.text = "Can Use";
         isWaveCooling = false;
     }
 
     IEnumerator ExplosionCoroutine() {
         isExplosionCooling = true;
         for(int i=explosion_cooltime; i>0; i--) {
-            explosion_text.text = (i-1).ToString();
             yield return waiting;
-        }
-        explosion_text.text = "Can Use";
+        }        
         isExplosionCooling = false;
     }
+
     #endregion
 }

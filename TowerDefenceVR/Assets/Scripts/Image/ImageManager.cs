@@ -21,7 +21,6 @@ public class ImageManager : MonoBehaviour
             Usedhand.Add(false);
         }
         KCO = GameObject.Find("EventManager").GetComponent<KillCounter>();
-        
     }
 
     // Use for Tutorial
@@ -35,6 +34,13 @@ public class ImageManager : MonoBehaviour
         if (nowImage != null) {
             nowImage.GetComponent<ImageHandle>().Success();
             Destroy(nowImage, 0.8f);
+        }
+    }
+
+    public void ImageSSuccess() {
+        if (nowImage != null) {
+            nowImage.GetComponent<ImageHandle>().Success();
+            Destroy(nowImage);
         }
     }
 

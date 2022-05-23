@@ -10,17 +10,20 @@ TagManager:
   - Bullet
   - Skill
   - Hand
+  - DialogPanel
+  - Boss
+  - Panel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NPC
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - Player
+  - Boss
   - 
   - 
   - 

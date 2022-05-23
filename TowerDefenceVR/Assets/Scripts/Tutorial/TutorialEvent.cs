@@ -37,7 +37,7 @@ public class TutorialEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxPaze = 7;
+        MaxPaze = 8;
         DataReset();
     }
 
@@ -63,11 +63,22 @@ public class TutorialEvent : MonoBehaviour
                 // todo    
                 RightHandImage.GetComponent<ImageManager>().ImageSuccess(); // 화면에 입력이 정답임을 표시 (녹색테두리)
                 // Nextpaze( {Function name of nextpaze} )
+                StartCoroutine(Nextpaze(IceBoltPaze));
+            }            
+        }
+        // Icebolt
+        if (nowPaze == 1 && !IsPaze[nowPaze] && !iswait) {
+            if (target == null && LeftHandData == Hands.Shoot) {
+                IsPaze[nowPaze] = true;
+                nowPaze++;    
+
+                // 다음페이즈 함수 호출
+                LeftHandImage.GetComponent<ImageManager>().ImageSuccess(); 
                 StartCoroutine(Nextpaze(secondPaze));
             }            
         }
         // todo ==> explosion
-        if (nowPaze == 1 && !IsPaze[nowPaze]) {
+        if (nowPaze == 2 && !IsPaze[nowPaze]) {
             if (target == null && target2 == null && target3 == null && LeftHandData == Hands.Peace) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
@@ -77,7 +88,7 @@ public class TutorialEvent : MonoBehaviour
                 StartCoroutine(Nextpaze(thirdPaze));
             }            
         }
-        if (nowPaze == 2 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 3 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && LeftHandData == Hands.Calling) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
@@ -87,7 +98,7 @@ public class TutorialEvent : MonoBehaviour
                 StartCoroutine(Nextpaze(fourthPaze));
             }            
         }
-        if (nowPaze == 3 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 4 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Peace) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
@@ -97,7 +108,7 @@ public class TutorialEvent : MonoBehaviour
                 StartCoroutine(Nextpaze(fifthPaze)); 
             }            
         }
-        if (nowPaze == 4 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 5 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Two) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
@@ -107,7 +118,7 @@ public class TutorialEvent : MonoBehaviour
                 StartCoroutine(Nextpaze(sixthPaze));
             }            
         }
-        if (nowPaze == 5 && !IsPaze[nowPaze] && !iswait) {
+        if (nowPaze == 6 && !IsPaze[nowPaze] && !iswait) {
             if (target == null && RightHandData == Hands.Three) {
                 IsPaze[nowPaze] = true;
                 nowPaze++;    
@@ -120,7 +131,7 @@ public class TutorialEvent : MonoBehaviour
         #endregion
  
         // data 0은 tutorial 종료 신호로 지정
-        if (RightHandData == Hands.Good && nowPaze == 6) {
+        if (RightHandData == Hands.Good && nowPaze == 7) {
             // 각종 데이터 초기화
             DataReset();
 
@@ -151,6 +162,12 @@ public class TutorialEvent : MonoBehaviour
         target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
         // 상태창 대화문 갱신 필요 X
         RightHandImage.GetComponent<ImageManager>().RightImageSet(Hands.Shoot);
+    }
+
+    void IceBoltPaze() {
+        target = Instantiate(enemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        description.text = "왼손으로 총모양을 만들면 IceBolt스킬이 발동 됩니다.";
+        LeftHandImage.GetComponent<ImageManager>().ImageSet(Hands.Shoot);
     }
 
     void secondPaze() {

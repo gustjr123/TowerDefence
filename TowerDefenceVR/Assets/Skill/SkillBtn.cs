@@ -8,36 +8,42 @@ public class SkillBtn : MonoBehaviour
     public Image skillFilter;
     public float coolTime;
     public Text coolTimeCounter;
-
     private float currentCoolTime;
+    bool isCooldown = false;
 
     void Start()
     {
         skillFilter.fillAmount = 0;
     }
 
+    void Update()
+    {
+        if (isCooldown == false)
+            skillFilter.fillAmount = 0;
+    }
+
 
     public void UseSkill()
     {
-        Debug.Log("Use Skill");
-        skillFilter.fillAmount = 1;
-        StartCoroutine("Cooltime");
-
-        currentCoolTime = coolTime;
-        coolTimeCounter.text = "" + currentCoolTime;
-        StartCoroutine("CoolTimeCounter");
-
-
+        if (isCooldown == false)
+        {
+            skillFilter.fillAmount = 1;
+            currentCoolTime = coolTime;
+            coolTimeCounter.text = "" + currentCoolTime;
+            StartCoroutine("CoolTimeCounter");
+            isCooldown = true;
+        }
     }
 
     IEnumerator Cooltime()
     {
         while (skillFilter.fillAmount > 0)
         {
-            skillFilter.fillAmount -= 1 * Time.smoothDeltaTime / coolTime;
+            //skillFilter.fillAmount -= 1 * Time.smoothDeltaTime / coolTime;
+            skillFilter.fillAmount += 1 / coolTime * Time.deltaTime;
             yield return null;
         }
-
+        isCooldown = false;
         yield break;
     }
 
@@ -50,6 +56,7 @@ public class SkillBtn : MonoBehaviour
             currentCoolTime -= 1.0f;
             coolTimeCounter.text = "" + currentCoolTime;
         }
+        isCooldown = false;
         yield break;
     }
 }

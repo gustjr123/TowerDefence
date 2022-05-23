@@ -14,7 +14,8 @@ public class ShootManager : MonoBehaviour
     public enum ShootMode
     {
         Auto,
-        Single
+        Single,
+        IceBolt
     }
 
     [Header("ShootMethod")]
@@ -32,6 +33,8 @@ public class ShootManager : MonoBehaviour
     // for Explosion skill, Not Use it for WaveSkill
     [System.NonSerialized] public bool isSkillOn = false;
     [System.NonSerialized] public float RunningTime;
+
+    private bool isIceCool = false;
 
     // Method to add in the Event of the gesture you want to make shoot
     public void OnShoot()
@@ -53,6 +56,17 @@ public class ShootManager : MonoBehaviour
                     hasShoot = true;
                     timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
                     Shoot();
+                }
+                break;
+
+            case ShootMode.IceBolt:
+                if (!hasShoot && !isIceCool)
+                {
+                    // Debug.Log("IceBolt : " + hasShoot.ToString());
+                    hasShoot = true;
+                    timeToFire = Time.time + 1f / bulletPrefab.GetComponent<Bullet>().fireRate;
+                    Shoot();
+                    StartCoroutine(IceBolt());
                 }
                 break;
         }
@@ -88,6 +102,12 @@ public class ShootManager : MonoBehaviour
         bulletPrefab.GetComponent<Bullet>().IsOnSkill = false;
         bulletPrefab.GetComponent<Bullet>().fireRate *= 0.5f;
         isSkillOn = false;
+    }
+
+    IEnumerator IceBolt() {
+        isIceCool = true;
+        yield return new WaitForSeconds(5.0f);
+        isIceCool = false;
     }
 
 }
