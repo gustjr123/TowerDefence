@@ -1852,6 +1852,7 @@ MonoBehaviour:
   Panel3: {fileID: 726677904067277495, guid: f0acaae1e5ecdb64f8077cb2d1697326, type: 3}
   Panel4: {fileID: 8631163232155179287, guid: e978b6665bb029547a4b5f887bd2c070, type: 3}
   Panel5: {fileID: 1293370586164276102, guid: a19e0ac99fe8e7b4eae933c92e3bd74d, type: 3}
+  SlimeGuide: {fileID: 1239653700}
 --- !u!1 &240039038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,7 +4886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015887620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: -1.5}
+  m_LocalPosition: {x: 2, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1233498325}

@@ -10,6 +10,7 @@ public class Panel : MonoBehaviour
     public GameObject Panel3;
     public GameObject Panel4;
     public GameObject Panel5;
+    [SerializeField] private GameObject SlimeGuide;
 
     float currTime;
     // Start is called before the first frame update
@@ -25,40 +26,45 @@ public class Panel : MonoBehaviour
 
         if (currTime > 4.95 && currTime < 5)
         {
-            GameObject Dialog = Instantiate(Panel1, transform.position, Quaternion.identity);
-            print("ÆÐ³Î »ý¼º");
+            Vector3 v = new Vector3(SlimeGuide.transform.position.x, SlimeGuide.transform.position.y+2, SlimeGuide.transform.position.z);
+            GameObject Dialog = Instantiate(Panel1, v, Quaternion.identity);
+            print("ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½");
             Panel1.SetActive(true);
             Destroy(Dialog, 0.2f);
         }
 
         if (currTime > 9.95 && currTime < 10)
         {
-            GameObject Dialog2 = Instantiate(Panel2, transform.position, Quaternion.identity);
-            print("ÆÐ³Î »ý¼º");
+            Vector3 v = new Vector3(SlimeGuide.transform.position.x, SlimeGuide.transform.position.y+2, SlimeGuide.transform.position.z);
+            GameObject Dialog2 = Instantiate(Panel2, v, Quaternion.identity);
+            print("ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½");
             Panel1.SetActive(true);
             Destroy(Dialog2, 0.2f);
         }
 
         if (currTime > 14.95 && currTime < 15)
         {
-            GameObject Dialog3 = Instantiate(Panel3, transform.position, Quaternion.identity);
-            print("ÆÐ³Î »ý¼º");
+            Vector3 v = new Vector3(SlimeGuide.transform.position.x, SlimeGuide.transform.position.y+2, SlimeGuide.transform.position.z);
+            GameObject Dialog3 = Instantiate(Panel3, v, Quaternion.identity);
+            print("ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½");
             Panel3.SetActive(true);
             Destroy(Dialog3, 0.2f);
         }
 
         if (currTime > 19.95 && currTime <20)
         {
-            GameObject Dialog4 = Instantiate(Panel4, transform.position, Quaternion.identity);
-            print("ÆÐ³Î »ý¼º");
+            Vector3 v = new Vector3(SlimeGuide.transform.position.x, SlimeGuide.transform.position.y+2, SlimeGuide.transform.position.z);
+            GameObject Dialog4 = Instantiate(Panel4, v, Quaternion.identity);
+            print("ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½");
             Panel4.SetActive(true);
             Destroy(Dialog4, 0.2f);
         }
 
         if (currTime > 24.95 && currTime < 25)
         {
-            GameObject Dialog5 = Instantiate(Panel5, transform.position, Quaternion.identity);
-            print("ÆÐ³Î »ý¼º");
+            Vector3 v = new Vector3(SlimeGuide.transform.position.x, SlimeGuide.transform.position.y+2, SlimeGuide.transform.position.z);
+            GameObject Dialog5 = Instantiate(Panel5, v, Quaternion.identity);
+            print("ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½");
             Panel5.SetActive(true);
             Destroy(Dialog5, 0.2f);
         }
