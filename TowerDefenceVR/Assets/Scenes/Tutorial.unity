@@ -1709,6 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 1194365261}
+  Test1: {fileID: 1425055628}
   enemyPrefab: {fileID: 7444981637151653801, guid: 531aebef667f51b429efa329e1323e2a, type: 3}
   RightHandImage: {fileID: 13123619}
   LeftHandImage: {fileID: 1312838422}

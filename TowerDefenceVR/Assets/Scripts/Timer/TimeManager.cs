@@ -39,6 +39,4 @@ public class TimeManager : MonoBehaviour
             timer = minuteToRealTime;
         }
     }
-
-
 }

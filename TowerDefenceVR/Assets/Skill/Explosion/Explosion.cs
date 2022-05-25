@@ -5,7 +5,6 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private GameObject Explosionparticle;
-    public List<GameObject> enemyList;
 
     [Header("ExplosionDamage")]
     [SerializeField] private int Damage;
@@ -13,7 +12,6 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyList = new List<GameObject>();
         Destroy(gameObject, 1.0f);
     }
 

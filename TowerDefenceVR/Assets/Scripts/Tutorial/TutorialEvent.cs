@@ -11,6 +11,9 @@ public class TutorialEvent : MonoBehaviour
     [Header("Description UI")]
     [SerializeField] private Text description;
 
+    [Header("Test UI")]
+    [SerializeField] private Text Test1;
+
     [Header("First Enemy")]
     [SerializeField] private GameObject enemyPrefab;
 
@@ -39,6 +42,7 @@ public class TutorialEvent : MonoBehaviour
     {
         MaxPaze = 8;
         DataReset();
+        
     }
 
     // Update is called once per frame

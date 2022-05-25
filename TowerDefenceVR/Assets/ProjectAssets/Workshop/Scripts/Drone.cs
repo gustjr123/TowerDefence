@@ -51,7 +51,7 @@ public class Drone : MonoBehaviour {
 	private void OnDestroy() {
 		GameObject temp = Instantiate(Deadimpact, gameObject.transform.position, gameObject.transform.rotation);
 		killCounterScript.AddKill();
-		// Destroy(temp, 1.0f);
+		Destroy(temp, 1.0f);
 	}
 
 	public void GetDamage(int Dmg) {

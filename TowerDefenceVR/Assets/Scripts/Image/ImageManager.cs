@@ -20,7 +20,9 @@ public class ImageManager : MonoBehaviour
         for (int i=0; i<9; i++) {
             Usedhand.Add(false);
         }
-        KCO = GameObject.Find("EventManager").GetComponent<KillCounter>();
+        if (GameObject.Find("EventManager") != null) {
+            KCO = GameObject.Find("EventManager").GetComponent<KillCounter>();
+        }
     }
 
     // Use for Tutorial
@@ -54,9 +56,6 @@ public class ImageManager : MonoBehaviour
     // Use for MainScene
     #region Using at main
     public Hands RandomImage() {
-        // StartCoroutine(RandomRespawn_Coroutine());
-        // if 0 == RightHand, 1 == LeftHand and Create ImagePrefab
-        // GameObject selectObject = (Random.Range(0, 2) == 0) ? RightHandImage : LeftHandImage;
         int temp = Random.Range(0, 2);
         Hands hand;
         // 중복 코드 방지
@@ -71,14 +70,12 @@ public class ImageManager : MonoBehaviour
         if (temp == 0) {
             nowImage = Instantiate(RightHandImage, Return_RandomPosition(), gameObject.transform.rotation);
             // Random Image Setting 
-            // hand = (Hands) Random.Range(0, 9);
             nowImage.GetComponent<ImageHandle>().SelectImage(hand);
             isright = true;
         }
         else {
             nowImage = Instantiate(LeftHandImage, Return_RandomPosition(), gameObject.transform.rotation);
             // Random Image Setting
-            // hand = (Hands) Random.Range(0, 9);
             nowImage.GetComponent<ImageHandle>().SelectImage(hand);
             isright = false;
         }
@@ -112,22 +109,3 @@ public class ImageManager : MonoBehaviour
     }
     #endregion
 }
-
-
-// IEnumerator RandomRespawn_Coroutine()
-    // {
-    //     for (int i=0; i<4; i++)
-    //     {
-    //         yield return new WaitForSeconds(0.8f);
-            
-    //         // if 0 == RightHand, 1 == LeftHand and Create ImagePrefab
-    //         GameObject selectObject = (Random.Range(0, 2) == 0) ? RightHandImage : LeftHandImage;
-    //         nowImage = Instantiate(selectObject, gameObject.transform.position, gameObject.transform.rotation);
-    //         nowimages.Add(nowImage);
-
-    //         // Random Image Setting 
-    //         Hands hand = (Hands) Random.Range(0, 10);
-    //         nowImage.GetComponent<ImageHandle>().SelectImage(hand);
-    //         imageHands.Add(hand);
-    //     }
-    // }

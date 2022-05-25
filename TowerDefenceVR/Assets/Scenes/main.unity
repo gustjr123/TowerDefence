@@ -8670,6 +8670,11 @@ MonoBehaviour:
   rightthump: {fileID: 2045753887}
   ClearImage: {fileID: 2074089782}
   ImageCanvas: {fileID: 283270985}
+  Spawner:
+  - {fileID: 1852036114}
+  - {fileID: 274091816}
+  - {fileID: 1597015763}
+  - {fileID: 2085869450}
 --- !u!1 &1976292332
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ public class DroneSpawn : MonoBehaviour {
 	public float MIN_TIME = 1;
 	public float MAX_TIME = 5;
 
+	private bool isRunning = false;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine("CreateDrone");
