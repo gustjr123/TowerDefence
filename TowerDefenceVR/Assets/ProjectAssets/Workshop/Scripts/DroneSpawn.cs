@@ -21,5 +21,4 @@ public class DroneSpawn : MonoBehaviour {
 			Instantiate(drone, transform.position, Quaternion.identity);
 		}
 	}
-
 }

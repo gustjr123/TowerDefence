@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46f9d0f8e1443a4f90a13476967b385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shield_Big: {fileID: 8850701426161775005, guid: 74e89e2efd71b564b95611d0e75c9f28, type: 3}
+  Shield_Big: {fileID: 6580416084584775323, guid: 118bd12418c308f4db5fe2250df4449f, type: 3}
 --- !u!4 &365464274
 Transform:
   m_ObjectHideFlags: 0
@@ -8079,7 +8079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drone: {fileID: 7444981637151653801, guid: 531aebef667f51b429efa329e1323e2a, type: 3}
   MIN_TIME: 1
-  MAX_TIME: 5
+  MAX_TIME: 3
 --- !u!4 &1852036116
 Transform:
   m_ObjectHideFlags: 0
