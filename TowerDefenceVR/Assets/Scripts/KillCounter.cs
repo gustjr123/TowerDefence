@@ -108,7 +108,7 @@ public class KillCounter : MonoBehaviour
     {
         ShowKills();
         // 킬수로 하나, 시간으로 하나 조건을 맞춰주면 됨
-        if (TimeManager.Minute >= 15 && nowPaze == 0) {
+        if (TimeManager.Minute >= 10 && nowPaze == 0) {
         // if (kills >= 5 && nowPaze == 0) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -120,7 +120,7 @@ public class KillCounter : MonoBehaviour
                 }
             }
         }
-        if (TimeManager.Minute >= 30 && nowPaze == 1) {
+        if (TimeManager.Minute >= 20 && nowPaze == 1) {
         // if (kills >= 10 && nowPaze == 1) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -131,7 +131,7 @@ public class KillCounter : MonoBehaviour
                 }
             }
         }
-        if (TimeManager.Minute >= 45 && nowPaze == 2) {
+        if (TimeManager.Minute >= 30 && nowPaze == 2) {
         // if (kills >= 15 && nowPaze == 2) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -142,7 +142,7 @@ public class KillCounter : MonoBehaviour
                 }
             }
         }
-        if (TimeManager.Minute >= 60 && nowPaze == 3) {
+        if (TimeManager.Minute >= 40 && nowPaze == 3) {
         // if (kills >= 20 && nowPaze == 3) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -157,7 +157,7 @@ public class KillCounter : MonoBehaviour
             }
         }
         // ending
-        if (TimeManager.Minute >= 60 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
+        if (TimeManager.Minute >= 40 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
         // if (kills >= 20 && nowPaze == 4) {
             if (tipDistance()) {
                 Debug.Log("Last Paze");
