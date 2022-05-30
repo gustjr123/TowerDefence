@@ -145,7 +145,7 @@ public class KillCounter : MonoBehaviour
                 }
             }
         }
-        if (TimeManager.Minute >= 60 && nowPaze == 3) {
+        if (TimeManager.Hour >= 1 && nowPaze == 3) {
         // if (kills >= 20 && nowPaze == 3) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -161,7 +161,7 @@ public class KillCounter : MonoBehaviour
             }
         }
         // ending
-        if (TimeManager.Minute >= 60 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
+        if (TimeManager.Hour >= 1 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
         // if (kills >= 20 && nowPaze == 4) {
             if (tipDistance()) {
                 Debug.Log("Last Paze");
