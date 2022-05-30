@@ -23,17 +23,20 @@ public class NPCMovement : MonoBehaviour
         timer += Time.deltaTime;
         Vector3 target = new Vector3(2.5f, 0f, -14f);
         Vector3 target2 = new Vector3(0, 0, -10f);
+        Vector3 player = new Vector3(0, 1, -16f);
         //float distance = Vector3.Distance(transform.position, targetWaypoint.position);
         //CheckDistanceToWaypoint(distance);
 
         if (timer > 2.95)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+            transform.LookAt(player);
         }
 
-        if (timer > 8)
+        if (timer > 60)
         {
             transform.position = Vector3.MoveTowards(transform.position, target2, 0.125f);
+            transform.LookAt(player);
         }
     }
     /*
