@@ -78,7 +78,7 @@ public class KillCounter : MonoBehaviour
         if (isRight) {
             if (nowCurrentHand == RightHandData) {
                 PauseManager.GetComponent<Pause>().NonPause();
-                nowPaze++;
+                //nowPaze++;
                 ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                 Debug.Log("nowPaze : " + nowPaze.ToString());
                 return true;
@@ -87,7 +87,7 @@ public class KillCounter : MonoBehaviour
         else {
             if (nowCurrentHand == LeftHandData) {
                 PauseManager.GetComponent<Pause>().NonPause();
-                nowPaze++;
+                //nowPaze++;
                 ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                 Debug.Log("nowPaze : " + nowPaze.ToString());  
                 return true;              
@@ -117,6 +117,7 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield1();
+                    nowPaze = 1;
                 }
             }
         }
@@ -128,6 +129,7 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
+                    nowPaze = 2;
                 }
             }
         }
@@ -139,6 +141,7 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
+                    nowPaze = 3;
                 }
             }
         }
@@ -153,6 +156,7 @@ public class KillCounter : MonoBehaviour
                     ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
                     ClearImage.GetComponent<Renderer>().enabled = true;
                     ImageCanvas.GetComponent<Canvas>().enabled = true;
+                    nowPaze = 4;
                 }
             }
         }
