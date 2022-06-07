@@ -78,7 +78,7 @@ public class KillCounter : MonoBehaviour
         if (isRight) {
             if (nowCurrentHand == RightHandData) {
                 PauseManager.GetComponent<Pause>().NonPause();
-                nowPaze++;
+                //nowPaze++;
                 ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                 Debug.Log("nowPaze : " + nowPaze.ToString());
                 return true;
@@ -87,7 +87,7 @@ public class KillCounter : MonoBehaviour
         else {
             if (nowCurrentHand == LeftHandData) {
                 PauseManager.GetComponent<Pause>().NonPause();
-                nowPaze++;
+                //nowPaze++;
                 ImageManager.GetComponent<ImageManager>().ImageSSuccess();
                 Debug.Log("nowPaze : " + nowPaze.ToString());  
                 return true;              
@@ -108,7 +108,7 @@ public class KillCounter : MonoBehaviour
     {
         ShowKills();
         // 킬수로 하나, 시간으로 하나 조건을 맞춰주면 됨
-        if (TimeManager.Minute >= 10 && nowPaze == 0) {
+        if (TimeManager.Minute >= 15 && nowPaze == 0) {
         // if (kills >= 5 && nowPaze == 0) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -117,10 +117,11 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield1();
+                    nowPaze = 1;
                 }
             }
         }
-        if (TimeManager.Minute >= 20 && nowPaze == 1) {
+        if (TimeManager.Minute >= 30 && nowPaze == 1) {
         // if (kills >= 10 && nowPaze == 1) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -128,10 +129,11 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield2();
+                    nowPaze = 2;
                 }
             }
         }
-        if (TimeManager.Minute >= 30 && nowPaze == 2) {
+        if (TimeManager.Minute >= 45 && nowPaze == 2) {
         // if (kills >= 15 && nowPaze == 2) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -139,10 +141,11 @@ public class KillCounter : MonoBehaviour
             else if (readyImage) {
                 if (ImageCheckPerPaze()) {
                     ShieldEvent.GetComponent<ShieldEvent>().OnShield3();
+                    nowPaze = 3;
                 }
             }
         }
-        if (TimeManager.Minute >= 40 && nowPaze == 3) {
+        if (TimeManager.Hour >= 1 && nowPaze == 3) {
         // if (kills >= 20 && nowPaze == 3) {
             if (!IsPaze[nowPaze]) {
                 ImageEventStart();
@@ -153,11 +156,12 @@ public class KillCounter : MonoBehaviour
                     ShieldEvent.GetComponent<ShieldEvent>().OnShieldTower();
                     ClearImage.GetComponent<Renderer>().enabled = true;
                     ImageCanvas.GetComponent<Canvas>().enabled = true;
+                    nowPaze = 4;
                 }
             }
         }
         // ending
-        if (TimeManager.Minute >= 40 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
+        if (TimeManager.Hour >= 1 && nowPaze == 4 && LeftHandData == Hands.Circle && RightHandData == Hands.Circle) {
         // if (kills >= 20 && nowPaze == 4) {
             if (tipDistance()) {
                 Debug.Log("Last Paze");
